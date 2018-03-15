@@ -11775,15 +11775,37 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Binary-search">Binary search<a class="anchor-link" href="#Binary-search">&#182;</a></h2><p>Binary search is a technique to find an element in a <strong>sorted</strong> array. It works by dividing the array into two parts, left and right. It first checks to see if the element we're searching for is equal to the <em>midpoint</em> of the splitted parts. If it is, we return the position of the midpoint. If not, we compare the element we're searching for with the midpoint and see if its either greater than or less than the midpoint's value. If the value at midpoint is less than the item, we discard whatever is in the left side and start the search again on the right part (right subarray). Similarly, if the value of midpoint is greater than the item, we discard whatever is in the right side and search on the left subarray.</p>
-<p><strong>Code:</strong></p>
+<h2 id="Binary-search">Binary search<a class="anchor-link" href="#Binary-search">&#182;</a></h2><p>Binary search is a technique to find an element in a <strong>sorted</strong> array. It works by dividing the array into two parts, left and right. It first checks to see if the element we're searching for is equal to the <em>midpoint</em> of the splitted parts. If it is, we return the position of the midpoint. If not, we compare the element we're searching for with the midpoint and see if it is either greater than or less than the midpoint's value. If the value at midpoint is less than the item we're searching for, we discard whatever is in the left side and start the search again on the right part (right subarray). Similarly, if the value of midpoint is greater than the search item, we discard whatever is in the right side and search on the left subarray.</p>
+<p>The process is illustrated in the picture below:
+<img src="../media/binary_search.jpg" alt="Binary search to find 4"></p>
+<p><strong>Pseudocode for finding an item in a sorted array using binary search</strong></p>
+<ol>
+<li>A: array of items</li>
+<li>start = 0</li>
+<li>end = A.length - 1</li>
+<li>mid = (begin + end) / 2</li>
+<li>IF item == A[mid]: THEN<ol>
+<li>Found the number</li>
+</ol>
+</li>
+<li>ELSE IF item &gt; A[mid]: THEN<ol>
+<li>begin = mid + 1</li>
+<li>GOTO step 4</li>
+</ol>
+</li>
+<li>ELSE:<ol>
+<li>end = mid - 1</li>
+<li>GOTO step 4</li>
+</ol>
+</li>
+</ol>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[43]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">binary_search</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
@@ -11814,13 +11836,13 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[44]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">]</span>
 <span class="n">A</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">A</span><span class="p">)</span> <span class="c1"># binary search only works on sorted lists</span>
 
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">A</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">A</span><span class="p">)):</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Binary search for items:&quot;</span><span class="p">)</span>
@@ -11850,6 +11872,7 @@ div#notebook {
 4 5
 5 9
 6 10
+7 21
 Binary search for items:
 5
 4
@@ -11866,7 +11889,7 @@ None
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Binary search works in O(lg(<em>n</em>)) time complexity, as it halves its search space at each step. As such, this algorithm is extremely fast and can find elements in a really big array in only a very small amount of steps. For example, as illustrated in the example below, it can find any element in array of size 100,000,000 (100 million) in just ~26 steps</p>
+<p>Binary search works in O(lg(<em>n</em>)) time complexity, as it halves its search space at each step. As such, this algorithm is extremely fast and can find elements in a really big array in only a very small amount of steps. For example, as illustrated in the example below, it can find any element in an array of size 100,000,000 (100 million) in just ~26 steps. Compare this to linear search, for which (in worst case), you may have to loop over all 100 million items to find the element you're looking for.</p>
 <p><em>NOTE: lg(n) = log<sub>2</sub>n</em></p>
 
 </div>
@@ -11874,7 +11897,7 @@ None
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[45]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
@@ -11891,7 +11914,7 @@ None
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[45]:</div>
+<div class="prompt output_prompt">Out[3]:</div>
 
 
 
@@ -11905,6 +11928,103 @@ None
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Bisection-method/technique">Bisection method/technique<a class="anchor-link" href="#Bisection-method/technique">&#182;</a></h2><p>Bisection method utilises the concept of binary search to divide something into two parts, left and right, and search for the solution in either the left or right part depending on the expected return value.</p>
+<p>A common example application of bisection method is to find the square root of a number (upto any number of decimal places as required). When finding the square root, we must decide when we are satisfied with the result i.e; should we find a square root accurate upto 5 decimal places or 3 decimal places.</p>
+<p>Let's say we want to find the square root of 25. We consider the range 0 to 25 as our search space for finding the square root. Calculate the mdipoint and check to see if the square (midpoint*midpoint) of the midpoint is equal to 25. If not, check to see if the square is greater or less than 25. Then search in either left or right parts of the midpoint accordingly. The process is illustrated in the picture below:
+<img src="../media/algorithm_bisection_method.jpg" alt="Square root using bisection method"></p>
+<p><strong>Pseudocode for finding square root using bisection method</strong></p>
+
+<pre><code>1. n: any real positive number
+2. error_threshold = 0.000001
+3. begin = 0
+4. end = n
+5. mid = (begin + end) / 2
+6. square = mid\*mid
+7. BEGIN IF |n - square| &lt; error_threshold: THEN
+    8. Found the number
+9. ELSE IF square &lt; n: THEN
+    10. begin = mid
+    11. GOTO step 5
+12. ELSE:
+    13. end = mid
+    14. GOTO step 5</code></pre>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">accuracy_threshold</span> <span class="o">=</span> <span class="mf">0.000001</span> <span class="c1"># we want the accuracy to be within this threshold</span>
+
+<span class="k">def</span> <span class="nf">square_root</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">e</span><span class="p">):</span>
+    <span class="n">begin</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">end</span> <span class="o">=</span> <span class="n">n</span>
+    <span class="k">while</span> <span class="n">begin</span> <span class="o">&lt;=</span> <span class="n">end</span><span class="p">:</span>
+        <span class="n">mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">begin</span> <span class="o">+</span> <span class="n">end</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
+        <span class="n">square</span> <span class="o">=</span> <span class="n">mid</span> <span class="o">*</span> <span class="n">mid</span>
+        <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="n">square</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">e</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">mid</span>
+        <span class="k">elif</span> <span class="n">square</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
+            <span class="n">begin</span> <span class="o">=</span> <span class="n">mid</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">end</span> <span class="o">=</span> <span class="n">mid</span>
+    <span class="k">return</span> <span class="kc">None</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">square_root</span><span class="p">(</span><span class="mi">25</span><span class="p">,</span> <span class="n">accuracy_threshold</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[5]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>5.000000074505806</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>If you've observed properly, you might have noticed why this bisection method works here. Basically, we have a <strong>sorted</strong> search space ranging from 0 to 25. Due to the ascending order of the range - 0, 1, 2, 3, ..., 25 we can safely discard half part of the search space, because half of the part is either greater or smaller than the expected value.</p>
+
+</div>
+</div>
 </div>
     </div>
   </div>
