@@ -35,15 +35,17 @@ Given an array *arr*, you have to choose a *pivot*. After choosing the *pivot*, 
 ![Quicksort](../media/quicksort.jpg)
 
 **Pseudocode for quicksort**
-    0. FUNCTION quicksort(arr):
-    1. arr: array of elements
-    2. IF arr.length <= 1 (0 or 1 element) THEN
-        3. return arr (array of 0 or 1 element is already sorted)
-    4. ELSE
-        5. pivot = arr[0] (choose first element as pivot, there are better ways to choose a pivot)
-        6. less = {array with elements less than *pivot*}
-        7. greater = {array with elements greater than *pivot*}
-        8. return quicksort(less) + [pivot] + quicksort(greater)
+```
+0. FUNCTION quicksort(arr):
+1. arr: array of elements
+2. IF arr.length <= 1 (0 or 1 element) THEN
+    3. return arr (array of 0 or 1 element is already sorted)
+4. ELSE
+    5. pivot = arr[0] (choose first element as pivot, there are better ways to choose a pivot)
+    6. less = {array with elements less than *pivot*}
+    7. greater = {array with elements greater than *pivot*}
+    8. return quicksort(less) + [pivot] + quicksort(greater)
+```
 
 
 ```python
