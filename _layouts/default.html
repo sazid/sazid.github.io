@@ -39,6 +39,10 @@
 
       {{ content }}
 
+	<button class="show-comments">Load comments</button>
+
+	<!-- The empty element required for Disqus to loads comments into -->  
+	<div id="disqus_thread"></div>
       </section>
       <footer>
         {% if site.github.is_project_page %}
