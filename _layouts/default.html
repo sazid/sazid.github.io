@@ -39,10 +39,10 @@
 
       {{ content }}
 
-	<button class="show-comments">Load comments</button>
+		<button onclick="load_disqus();return false;">Load comments</button>
 
-	<!-- The empty element required for Disqus to loads comments into -->  
-	<div id="disqus_thread"></div>
+		<!-- The empty element required for Disqus to loads comments into -->  
+		<div id="disqus_thread"></div>
       </section>
       <footer>
         {% if site.github.is_project_page %}
@@ -73,21 +73,12 @@
 		this.page.identifier = window.location.pathname;
 	};
 
-	$(document).ready(function() {
-		$('.show-comments').on('click', function(){
-			  var disqus_shortname = 'sazid-github-io';
-
-			  // ajax request to load the disqus javascript
-			  $.ajax({
-					  type: "GET",
-					  url: "http://" + disqus_shortname + ".disqus.com/embed.js",
-					  dataType: "script",
-					  cache: true
-			  });
-			  // hide the button once comments load
-			  $(this).fadeOut();
-		});
-	});
+	function load_disqus() { // DON'T EDIT BELOW THIS LINE
+		var d = document, s = d.createElement('script');
+		s.src = 'https://sazid-github-io.disqus.com/embed.js';
+		s.setAttribute('data-timestamp', +new Date());
+		(d.head || d.body).appendChild(s);
+	};
 	</script>
   </body>
 </html>
