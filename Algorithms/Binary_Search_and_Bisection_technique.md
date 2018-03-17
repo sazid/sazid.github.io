@@ -6,6 +6,7 @@ The process is illustrated in the picture below:
 ![Binary search to find 4](../media/binary_search.jpg)
 
 **Pseudocode for finding an item in a sorted array using binary search**
+```
 1. A: array of items
 2. start = 0
 3. end = A.length - 1
@@ -18,6 +19,7 @@ The process is illustrated in the picture below:
 10. ELSE:
     11. end = mid - 1
     12. GOTO step 4
+```
 
 
 ```python
