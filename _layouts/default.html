@@ -39,7 +39,7 @@
 
       {{ content }}
 
-		<button onclick="load_disqus();return false;">Load comments</button>
+		<button id="disqus_btn" onclick="load_disqus();return false;">Load comments</button>
 
 		<!-- The empty element required for Disqus to loads comments into -->  
 		<div id="disqus_thread"></div>
@@ -78,6 +78,7 @@
 		s.src = 'https://sazid-github-io.disqus.com/embed.js';
 		s.setAttribute('data-timestamp', +new Date());
 		(d.head || d.body).appendChild(s);
+		document.getElementById("disqus_btn").style.visibility = 'hidden';
 	};
 	</script>
   </body>
