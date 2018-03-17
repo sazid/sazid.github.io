@@ -43,6 +43,8 @@
         {% if site.github.is_project_page %}
         <p>This project is maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></p>
         {% endif %}
+
+		<p><small>Copyright | Sazid</small></p>
       </footer>
     </div>
     <script src="{{ '/assets/js/scale.fix.js' | relative_url }}"></script>
@@ -59,6 +61,29 @@
         ga('send', 'pageview');
     </script>
   {% endif %}
+
+  	<script>
+	var disqus_config = function () {
+		this.page.url = window.location.href;
+		this.page.identifier = window.location.pathname;
+	};
+
+	$(document).ready(function() {
+		$('.show-comments').on('click', function(){
+			  var disqus_shortname = 'sazid-github-io';
+
+			  // ajax request to load the disqus javascript
+			  $.ajax({
+					  type: "GET",
+					  url: "http://" + disqus_shortname + ".disqus.com/embed.js",
+					  dataType: "script",
+					  cache: true
+			  });
+			  // hide the button once comments load
+			  $(this).fadeOut();
+		});
+	});
+	</script>
   </body>
 </html>
 
