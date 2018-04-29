@@ -13,7 +13,7 @@ Its a tree data structure, in the sense that, this data structure stores all the
 
 ![Trie.jpg](../media/Trie.jpg)
 
-We have 4 different strings stored in the trie: THERE, THEIR, BAD, BALL.
+We have 5 different strings stored in the trie: THERE, THEIR, THE, BAD, BALL.
 
 ### How does it (insertion) work?
 Let's say we want to store the word THERE (↓ down arrow represents a pointer in the tree, which points to the node we're currently processing):
