@@ -32,7 +32,7 @@ It works properly. Now, we're ready to see how quicksort utilises this simple co
 
 Given an array *arr*, you have to choose a *pivot*. After choosing the *pivot*, divide the array into 3 parts: **less = {array with elements less than *pivot*}**, the **pivot** and **greater = {array with elements greater than *pivot*}**. Then, apply *quicksort* (recursively) on **less** and **greater** arrays and join **less** + **pivot** + **greater** into a single array.
 
-In the example below, we have an array, arr: [3, 2, 4, 6]. We take the first element arr[0] = 3 as the *pivot*. Then divide the array into 3 parts, *less* array contains elements with value less than *pivot* and *greater* array contains elements with value greater than the *pivot*. Since, *less* array contains just one element, it is already sorted. But, *greater* array contains two elements. So, we take this array and do the same process we just did. After that, we just join the three items: **less array + pivot + greater array**.
+In the example below, we have an array, arr: [3, 2, 6, 4]. We take the first element arr[0] = 3 as the *pivot*. Then divide the array into 3 parts, *less* array contains elements with value less than *pivot* and *greater* array contains elements with value greater than the *pivot*. Since, *less* array contains just one element, it is already sorted. But, *greater* array contains two elements. So, we take this array and do the same process we just did. After that, we just join the three items: **less array + pivot + greater array**.
 
 ![Quicksort](../media/quicksort.jpg)
 
