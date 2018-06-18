@@ -1,7 +1,7 @@
 title: Sazid
 description: My personal site
 google_analytics: 
-theme: jekyll-theme-minima
+remote_theme: wild-flame/jekyll-simple
 
 gems:
   - jekyll-mentions
