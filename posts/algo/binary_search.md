@@ -3,7 +3,7 @@
 Binary search is a technique to find an element in a **sorted** array. It works by dividing the array into two parts, left and right. It first checks to see if the element we're searching for is equal to the *midpoint* of the splitted parts. If it is, we return the position of the midpoint. If not, we compare the element we're searching for with the midpoint and see if it is either greater than or less than the midpoint's value. If the value at midpoint is less than the item we're searching for, we discard whatever is in the left side and start the search again on the right part (right subarray). Similarly, if the value of midpoint is greater than the search item, we discard whatever is in the right side and search on the left subarray.
 
 The process is illustrated in the picture below:
-![Binary search to find 4](../media/binary_search.jpg)
+<img src="../../media/binary_search.jpg" width="400px" alt="binary search demo">
 
 **Pseudocode for finding an item in a sorted array using binary search**
 ```
@@ -76,17 +76,12 @@ Binary search works in O(lg(*n*)) time complexity, as it halves its search space
 
 *NOTE: lg(n) = log<sub>2</sub>n*
 
-
 ```python
 import math
 math.log2(100000000)
 ```
 
-
-
-
     26.575424759098897
-
 
 
 ## Bisection method/technique
@@ -95,7 +90,7 @@ Bisection method utilises the concept of binary search to divide something into 
 A common example application of bisection method is to find the square root of a number (upto any number of decimal places as required). When finding the square root, we must decide when we are satisfied with the result i.e; should we find a square root accurate upto 5 decimal places or 3 decimal places.
 
 Let's say we want to find the square root of 25. We consider the range 0 to 25 as our search space for finding the square root. Calculate the mdipoint and check to see if the square (midpoint\*midpoint) of the midpoint is equal to 25. If not, check to see if the square is greater or less than 25. Then search in either left or right parts of the midpoint accordingly. The process is illustrated in the picture below:
-![Square root using bisection method](../media/algorithm_bisection_method.jpg)
+<img src="../../media/algorithm_bisection_method.jpg" width="350px" alt="bisection technique demo">
 
 **Pseudocode for finding square root using bisection method**
 ```
@@ -139,11 +134,6 @@ def square_root(n, e):
 square_root(25, accuracy_threshold)
 ```
 
-
-
-
     5.000000074505806
-
-
 
 If you've observed properly, you might have noticed why this bisection method works here. Basically, we have a **sorted** search space ranging from 0 to 25. Due to the ascending order of the range - 0, 1, 2, 3, ..., 25 we can safely discard half part of the search space, because half of the part is either greater or smaller than the expected value.

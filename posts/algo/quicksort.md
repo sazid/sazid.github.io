@@ -34,7 +34,7 @@ Given an array *arr*, you have to choose a *pivot*. After choosing the *pivot*, 
 
 In the example below, we have an array, arr: [3, 2, 6, 4]. We take the first element arr[0] = 3 as the *pivot*. Then divide the array into 3 parts, *less* array contains elements with value less than *pivot* and *greater* array contains elements with value greater than the *pivot*. Since, *less* array contains just one element, it is already sorted. But, *greater* array contains two elements. So, we take this array and do the same process we just did. After that, we just join the three items: **less array + pivot + greater array**.
 
-![Quicksort](../media/quicksort.jpg)
+<img src="../../media/quicksort.jpg" width="400px" alt="Quicksort demo">
 
 **Pseudocode for quicksort**
 ```

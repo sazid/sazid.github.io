@@ -11,7 +11,7 @@ Searching: O(m)
 
 Its a tree data structure, in the sense that, this data structure stores all the individual characters of a string as separate nodes (or vertices) in a tree. There is a root node from which all other nodes descend. See the following figure:
 
-![Trie.jpg](../media/Trie.jpg)
+<img src="../../media/Trie.jpg" width="600px" alt="Trie">
 
 We have 5 different strings stored in the trie: THERE, THEIR, THE, BAD, BALL.
 

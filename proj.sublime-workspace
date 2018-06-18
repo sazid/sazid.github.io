@@ -1,0 +1,1001 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"gitcre",
+				"github_get_credentials"
+			],
+			[
+				"itemid",
+				"item_id"
+			],
+			[
+				"githu",
+				"githubIntegrationApp"
+			],
+			[
+				"app",
+				"githubIntegrationApp"
+			],
+			[
+				"linktext",
+				"link_btn_text"
+			],
+			[
+				"list-grou",
+				"list-group-item"
+			],
+			[
+				"select",
+				"select\tTag"
+			],
+			[
+				"gitInteG",
+				"githubIntegrationComponent"
+			],
+			[
+				"flex-",
+				"flex-start\talign-items"
+			],
+			[
+				"get",
+				"get\t$.get()"
+			],
+			[
+				"userid",
+				"user_id"
+			],
+			[
+				"noti",
+				"notification"
+			],
+			[
+				"redirect",
+				"HttpResponseRedirect"
+			],
+			[
+				"notifs",
+				"notifications"
+			],
+			[
+				"nocontain",
+				"notificationContainer"
+			],
+			[
+				"notificat",
+				"notification"
+			],
+			[
+				"noticontainer",
+				"notificationContainer"
+			],
+			[
+				"InVi",
+				"IndividualSettings"
+			],
+			[
+				"Suge",
+				"Suggestion"
+			],
+			[
+				"font-",
+				"font-weight\tproperty"
+			],
+			[
+				"zz-con",
+				"zz-dropdown-content"
+			],
+			[
+				"basbnam",
+				"baseBranchName"
+			],
+			[
+				"succes",
+				"success"
+			],
+			[
+				"teamid",
+				"team_id"
+			],
+			[
+				"projectid",
+				"project_id"
+			],
+			[
+				"filename",
+				"file_name"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 375.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"menu",
+				"View: Toggle Menu"
+			],
+			[
+				"ssc++",
+				"Set Syntax: C++"
+			],
+			[
+				"minima",
+				"View: Toggle Minimap"
+			],
+			[
+				"html",
+				"Set Syntax: HTML"
+			],
+			[
+				"js",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"status",
+				"View: Toggle Status Bar"
+			],
+			[
+				"tabs",
+				"View: Toggle Tabs"
+			],
+			[
+				"prefern",
+				"Preferences: Settings"
+			],
+			[
+				"origam",
+				"Origami: Create Pane Below"
+			],
+			[
+				"sshtml",
+				"Set Syntax: HTML"
+			],
+			[
+				"markdow",
+				"Set Syntax: Markdown"
+			],
+			[
+				"min",
+				"View: Toggle Minimap"
+			],
+			[
+				"REMOVPACK",
+				"Package Control: Remove Package"
+			],
+			[
+				"rempacka",
+				"Package Control: Remove Package"
+			],
+			[
+				"suslinter",
+				"Preferences: SublimeLinter Settings"
+			],
+			[
+				"linttogg",
+				"SublimeLinter: Toggle Highlights"
+			],
+			[
+				"jstem",
+				"Set Syntax: JavaScript Template"
+			],
+			[
+				"ssjs",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"tomen",
+				"View: Toggle Menu"
+			],
+			[
+				"gitgutter",
+				"Preferences: GitGutter Settings"
+			],
+			[
+				"jste",
+				"Set Syntax: JavaScript Template"
+			],
+			[
+				"javascript",
+				"Set Syntax: JavaScript NG"
+			],
+			[
+				"togme",
+				"View: Toggle Menu"
+			],
+			[
+				"instapack",
+				"Package Control: Install Package"
+			],
+			[
+				"ayu",
+				"ayu: Activate theme"
+			],
+			[
+				"isnta",
+				"Package Control: Install Package"
+			],
+			[
+				"sulintogg",
+				"SublimeLinter: Toggle Highlights"
+			],
+			[
+				"instapka",
+				"Package Control: Install Package"
+			],
+			[
+				"anaconda",
+				"Anaconda: Autoformat PEP8 Errors"
+			],
+			[
+				"sublimelinter",
+				"SublimeLinter: Toggle Highlights"
+			],
+			[
+				"instpack",
+				"Package Control: Install Package"
+			],
+			[
+				"linter",
+				"SublimeLinter: Lint This View"
+			],
+			[
+				"instpac",
+				"Package Control: Install Package"
+			],
+			[
+				"remove packa",
+				"Package Control: Remove Package"
+			],
+			[
+				"da ui",
+				"DA UI: Select Accent"
+			],
+			[
+				"tomenu",
+				"View: Toggle Menu"
+			],
+			[
+				"toggle",
+				"View: Toggle Menu"
+			],
+			[
+				"title",
+				"Convert Case: Title Case"
+			],
+			[
+				"inspack",
+				"Package Control: Install Package"
+			],
+			[
+				"origami",
+				"Origami: Create Pane Above"
+			],
+			[
+				"isntpacka",
+				"Package Control: Install Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"prefere",
+				"Preferences: Settings"
+			],
+			[
+				"uiht",
+				"UI: Select Color Scheme"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"colorsche",
+				"UI: Select Color Scheme"
+			],
+			[
+				"installpac",
+				"Package Control: Install Package"
+			],
+			[
+				"beautf",
+				"HTMLBeautify"
+			],
+			[
+				"pacinsta",
+				"Package Control: Install Package"
+			],
+			[
+				"color",
+				"Color Picker"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"theme",
+				"UI: Select Color Scheme"
+			],
+			[
+				"ssc",
+				"Set Syntax: C"
+			],
+			[
+				"minim",
+				"View: Toggle Minimap"
+			],
+			[
+				"SQL",
+				"Set Syntax: SQL"
+			],
+			[
+				"insta packa",
+				"Package Control: Install Package"
+			],
+			[
+				"packacontrol remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"install ",
+				"Package Control: Install Package"
+			],
+			[
+				"instal pack",
+				"Package Control: Install Package"
+			],
+			[
+				"insta pack",
+				"Package Control: Install Package"
+			],
+			[
+				"settings user",
+				"Preferences: Package Control Settings – User"
+			],
+			[
+				"open files",
+				"View: Toggle Open Files in Side Bar"
+			],
+			[
+				"install pac",
+				"Package Control: Install Package"
+			],
+			[
+				"install packa",
+				"Package Control: Install Package"
+			],
+			[
+				"settings",
+				"Preferences: Package Control Settings – User"
+			]
+		],
+		"width": 531.0
+	},
+	"console":
+	{
+		"height": 213.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/sazid/workspace/sazid.github.io"
+	],
+	"file_history":
+	[
+		"/home/sazid/workspace/asz/server/settings.py",
+		"/home/sazid/workspace/asz/server/site_media/Jquery/Local/github_integration.js",
+		"/home/sazid/workspace/asz/server/site_media/Jquery/Local/CreateBug.js",
+		"/home/sazid/workspace/asz/server/site_media/Jquery/Local/CreateTeam.js",
+		"/home/sazid/workspace/asz/server/MySite/templates/CreateTeam.html",
+		"/home/sazid/workspace/asz/server/integrations/models.py",
+		"/home/sazid/workspace/asz/server/MySite/views.py",
+		"/home/sazid/workspace/asz/server/integrations/views.py",
+		"/home/sazid/workspace/asz/server/MySite/templates/CreateBug.html",
+		"/home/sazid/workspace/asz/server/integrations/urls.py",
+		"/home/sazid/workspace/asz/server/urls.py",
+		"/home/sazid/workspace/asz/server/MySite/templates/BaseTemplate.html",
+		"/home/sazid/workspace/asz/server/integrations/templates/integrations/modal-template.html",
+		"/home/sazid/workspace/asz/server/integrations/templates/integrations/integrationComponent.html",
+		"/home/sazid/workspace/asz/server/integrations/templates/integrations/integrationMenuComponent.html",
+		"/home/sazid/workspace/asz/server/MySite/templates/UnifiedSearch.html",
+		"/home/sazid/workspace/asz/server/site_media/Jquery/Local/UnifiedSearch.js",
+		"/home/sazid/workspace/asz/server/MySite/templates/ViewSteps.html",
+		"/home/sazid/workspace/asz/server/site_media/Jquery/Local/BackupSchedule.js",
+		"/home/sazid/.config/sublime-text-3/Packages/User/JavaScript Template.sublime-syntax",
+		"/home/sazid/workspace/asz/server/site_media/Jquery/Local/Base.js",
+		"/home/sazid/workspace/asz/server/MySite/models.py",
+		"/usr/local/lib/python2.7/dist-packages/django/http/response.py",
+		"/home/sazid/workspace/asz/server/server_maintenance.py",
+		"/home/sazid/workspace/asz/server/MySite/templates/Notifications.html",
+		"/home/sazid/workspace/asz/server/BasicOperations/batch_functions.py",
+		"/home/sazid/workspace/asz/server/site_media/Jquery/Local/Notifications.js",
+		"/home/sazid/workspace/asz/server/Common/DataBaseUtilities.py",
+		"/home/sazid/workspace/asz/server/MySite/templates/login.html",
+		"/home/sazid/Downloads/yamm3-master/index.html",
+		"/home/sazid/workspace/asz/server/site_media/Jquery/Local/snapview.js",
+		"/home/sazid/Desktop/server.sublime-project",
+		"/home/sazid/workspace/asz/work/server/urls.py",
+		"/home/sazid/workspace/asz/work/server/MySite/views.py",
+		"/home/sazid/workspace/asz/work/server/MySite/templates/BaseTemplate.html",
+		"/home/sazid/workspace/asz/work/server/site_media/CSS-Style-Sheet.css",
+		"/home/sazid/workspace/asz/work/server/site_media/Jquery/Local/Base.js",
+		"/home/sazid/workspace/asz/work/server/site_media/Jquery/Local/CreateNewRequirement.js",
+		"/home/sazid/workspace/asz/work/server/MySite/templates/CreateTeam.html",
+		"/home/sazid/workspace/asz/work/server/site_media/Jquery/Local/CreateTeam.js",
+		"/home/sazid/workspace/pygithub_test/main.py",
+		"/home/sazid/workspace/asz/work/server/DB_queries.sql",
+		"/home/sazid/workspace/asz/work/server/MySite/templates/CreateBug.html",
+		"/home/sazid/workspace/asz/work/server/site_media/Jquery/Local/CreateBug.js",
+		"/home/sazid/workspace/asz/work/server/settings.py",
+		"/home/sazid/workspace/asz/work/server/MySite/middlewares.py",
+		"/home/sazid/workspace/asz/work/server/MySite/middlewares/middlewares.py",
+		"/home/sazid/workspace/asz/work/server/Common/DataBaseUtilities.py",
+		"/home/sazid/workspace/asz/work/server/site_media/Jquery/jquery.address-1.4/samples/accordion/jquery-1.4.4.min.js",
+		"/home/sazid/workspace/asz/work/server/site_media/assets/global/plugins/backstretch/README.md",
+		"/home/sazid/workspace/asz/work/server/site_media/Jquery/Local/CreateNewTask.js",
+		"/home/sazid/workspace/asz/work/server/site_media/Jquery/Local/EditTestCase.js",
+		"/home/sazid/workspace/asz/work/server/site_media/Jquery/Local/TestCaseCreatePage.js",
+		"/home/sazid/workspace/asz/work/ZeuzServerSetup/Linux_Debian_ServerSetup.py",
+		"/home/sazid/workspace/asz/work/ZeuzServerSetup/Linux_RedHat_ServerSetup.py",
+		"/home/sazid/workspace/asz/work/server/DB_run_alone_queries.sql",
+		"/home/sazid/workspace/asz/work/server/custom_models.py",
+		"/home/sazid/workspace/asz/work/server/site_media/Jquery/Local/ManageBug.js",
+		"/home/sazid/workspace/asz/work/server/site_media/Jquery/Local/ManageTask.js",
+		"/home/sazid/workspace/asz/work/server/site_media/Jquery/Local/ManageRequirement.js",
+		"/home/sazid/workspace/asz/work/server/site_media/Jquery/Local/DeleteExisting.js",
+		"/home/sazid/workspace/asz/work/server/MySite/templates/DeleteExisting.html",
+		"/home/sazid/workspace/asz/work/server/BasicOperations/TestCaseCreateEdit.py",
+		"/home/sazid/workspace/asz/work/server/site_media/Jquery/Local/UnifiedSearch.js",
+		"/home/sazid/workspace/asz/work/server/BasicOperations/batch_functions.py",
+		"/home/sazid/.config/sublime-text-3/Packages/User/Package Control.sublime-settings",
+		"/home/sazid/workspace/asz/work/server/MySite/models.py",
+		"/home/sazid/workspace/asz/work/server/MySite/templates/EditTestCase.html",
+		"/home/sazid/workspace/asz/work/server/site_media/Jquery/Local/BackupSchedule.js",
+		"/home/sazid/workspace/asz/work/server/server_maintenance.py",
+		"/home/sazid/workspace/asz/work/server/site_media/Jquery/FileSaver.js",
+		"/home/sazid/workspace/asz/work/server/site_media/Jquery/Local/GetLog.js",
+		"/home/sazid/workspace/asz/work/server/MySite/templates/BackupDatabase.html",
+		"/home/sazid/workspace/asz/work/server/Common/CommonUtil.py"
+	],
+	"find":
+	{
+		"height": 33.0
+	},
+	"find_in_files":
+	{
+		"height": 135.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"Req_buttons",
+			"const store",
+			"params",
+			"params{",
+			"def github_",
+			"def",
+			"axios",
+			"axios.",
+			"get",
+			"axios.defaults.",
+			"axios",
+			"csrf_token",
+			"user_id",
+			"CreateBug",
+			"github",
+			"init",
+			"Credentials.objects",
+			"trim",
+			"get",
+			"platform: ",
+			"platform",
+			"'github'",
+			"github_authenticate_user",
+			"github_delete_user",
+			"delete",
+			"authenticate_success",
+			"authenticate_loading",
+			"'github'",
+			"GitHub",
+			"v-if=\"error_text\"",
+			"error_text",
+			"delete",
+			"integration",
+			"base_branch_name",
+			"GitHub",
+			"password",
+			"project_id",
+			"integration",
+			"github_authenticate",
+			"github_create_new_link",
+			"trash",
+			"key",
+			"tick",
+			"delete_loading",
+			"authenticate_loading",
+			"delete_loading",
+			"delete_icon",
+			"Username",
+			"username",
+			"Username",
+			"username",
+			"Username",
+			"username",
+			"Username",
+			"username",
+			"pull_number",
+			"number",
+			"showMenu",
+			"github-authentication",
+			"auhentication",
+			"github_auhentication",
+			"component",
+			"auhtenicationComponent",
+			"Integration",
+			"new vue",
+			"initGithubAuthentication",
+			"authenticationComponent",
+			"githubIntegrationApp",
+			"github",
+			"this.loading",
+			"link_success",
+			"green",
+			"error_text",
+			"issue_comments",
+			"repository_name",
+			"head_branch_name",
+			"item_url",
+			"pull",
+			"integration_type",
+			"base_branch_name",
+			"pull_number",
+			"head_branch_name",
+			"number",
+			"head_branch_name",
+			"Yes",
+			"a",
+			"addon",
+			"repo",
+			"repo_list",
+			"github_get_repo_list",
+			"github_get_branch_list",
+			"repo_list",
+			"loading_repo_list",
+			"repo_id",
+			"github_get_repo_list",
+			"github_get_branch_list",
+			"selected_branch",
+			"github_remove_link",
+			"github_create_new_link",
+			"github_link_to_existing_pr",
+			"github_create_new_link",
+			"number",
+			"link_icon",
+			"repo",
+			"pull_number",
+			"selected_repo",
+			"repo_list",
+			"repo",
+			"showCreateNewLink",
+			"showRemoveLink",
+			"integrationCreateNewLinkComponent",
+			"small",
+			"strong",
+			"em",
+			"ul",
+			"li",
+			"Links",
+			"merge_commit_sha",
+			"name",
+			"comments",
+			"assignee",
+			"status",
+			"console.log",
+			"error_text",
+			"No",
+			"a",
+			"github_link_to_existing_pr",
+			"github_remove_link"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"store",
+			""
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 33.0
+	},
+	"input":
+	{
+		"height": 57.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.SublimeLinter":
+	{
+		"height": 148.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.mdpopups":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "proj.sublime-project",
+	"replace":
+	{
+		"height": 62.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"basetem",
+				"MySite/templates/BaseTemplate.html"
+			],
+			[
+				"settings",
+				"settings.py"
+			],
+			[
+				"creabugjs",
+				"site_media/Jquery/Local/CreateBug.js"
+			],
+			[
+				"modal",
+				"integrations/templates/integrations/modal-template.html"
+			],
+			[
+				"creattejs",
+				"site_media/Jquery/Local/CreateTeam.js"
+			],
+			[
+				"creatteam",
+				"MySite/templates/CreateTeam.html"
+			],
+			[
+				"viewspy",
+				"MySite/views.py"
+			],
+			[
+				"urls",
+				"integrations/urls.py"
+			],
+			[
+				"creb",
+				"MySite/templates/CreateBug.html"
+			],
+			[
+				"creabught",
+				"MySite/templates/CreateBug.html"
+			],
+			[
+				"template",
+				"integrations/templates/integrations/modal-template.html"
+			],
+			[
+				"basetemp",
+				"MySite/templates/BaseTemplate.html"
+			],
+			[
+				"mod",
+				"integrations/models.py"
+			],
+			[
+				"crebugh",
+				"MySite/templates/CreateBug.html"
+			],
+			[
+				"creabug",
+				"site_media/Jquery/Local/CreateBug.js"
+			],
+			[
+				"settingsp",
+				"settings.py"
+			],
+			[
+				"unifseaht",
+				"MySite/templates/UnifiedSearch.html"
+			],
+			[
+				"unifisearjs",
+				"site_media/Jquery/Local/UnifiedSearch.js"
+			],
+			[
+				"viewsp",
+				"MySite/views.py"
+			],
+			[
+				"urlpy",
+				"urls.py"
+			],
+			[
+				"views",
+				"MySite/templates/ViewSteps.html"
+			],
+			[
+				"viewpy",
+				"MySite/views.py"
+			],
+			[
+				"crebujs",
+				"site_media/Jquery/Local/CreateBug.js"
+			],
+			[
+				"crebughtm",
+				"MySite/templates/CreateBug.html"
+			],
+			[
+				"crebugjs",
+				"site_media/Jquery/Local/CreateBug.js"
+			],
+			[
+				"basejs",
+				"site_media/Jquery/Local/Base.js"
+			],
+			[
+				"notifjs",
+				"site_media/Jquery/Local/Notifications.js"
+			],
+			[
+				"notifi",
+				"MySite/templates/Notifications.html"
+			],
+			[
+				"viepy",
+				"MySite/views.py"
+			],
+			[
+				"view",
+				"MySite/templates/ViewSteps.html"
+			],
+			[
+				"creatbugjs",
+				"site_media/Jquery/Local/CreateBug.js"
+			],
+			[
+				"login",
+				"MySite/templates/login.html"
+			],
+			[
+				"bastem",
+				"MySite/templates/BaseTemplate.html"
+			],
+			[
+				"bastemplat",
+				"MySite/templates/BaseTemplate.html"
+			],
+			[
+				"snapview",
+				"site_media/Jquery/Local/snapview.js"
+			],
+			[
+				"basetemplate",
+				"MySite/templates/BaseTemplate.html"
+			],
+			[
+				"basetempat",
+				"MySite/templates/BaseTemplate.html"
+			],
+			[
+				"views.p",
+				"MySite/views.py"
+			],
+			[
+				"css",
+				"site_media/CSS-Style-Sheet.css"
+			],
+			[
+				"creareqjs",
+				"site_media/Jquery/Local/CreateNewRequirement.js"
+			],
+			[
+				"createamjs",
+				"site_media/Jquery/Local/CreateTeam.js"
+			],
+			[
+				"middle",
+				"MySite/middlewares.py"
+			],
+			[
+				"basete",
+				"MySite/templates/BaseTemplate.html"
+			],
+			[
+				"crebught",
+				"MySite/templates/CreateBug.html"
+			],
+			[
+				"custommod",
+				"custom_models.py"
+			],
+			[
+				"settingspy",
+				"settings.py"
+			],
+			[
+				"testcasecrejs",
+				"site_media/Jquery/Local/TestCaseCreatePage.js"
+			],
+			[
+				"edittestcas",
+				"site_media/Jquery/Local/EditTestCase.js"
+			],
+			[
+				"creataskjs",
+				"site_media/Jquery/Local/CreateNewTask.js"
+			],
+			[
+				"createbugjs",
+				"site_media/Jquery/Local/CreateBug.js"
+			],
+			[
+				"manabugjs",
+				"site_media/Jquery/Local/ManageBug.js"
+			],
+			[
+				"managtaskjs",
+				"site_media/Jquery/Local/ManageTask.js"
+			],
+			[
+				"managrequijs",
+				"site_media/Jquery/Local/ManageRequirement.js"
+			],
+			[
+				"testcasecreate",
+				"site_media/Jquery/Local/TestCaseCreatePage.js"
+			],
+			[
+				"edittestcasejs",
+				"site_media/Jquery/Local/EditTestCase.js"
+			],
+			[
+				"unsarjs",
+				"site_media/Jquery/Local/UnifiedSearch.js"
+			],
+			[
+				"deleteexistingjs",
+				"site_media/Jquery/Local/DeleteExisting.js"
+			],
+			[
+				"deleteexisting",
+				"MySite/templates/DeleteExisting.html"
+			],
+			[
+				"databaseuti",
+				"Common/DataBaseUtilities.py"
+			],
+			[
+				"filesavejs",
+				"site_media/Jquery/FileSaver.js"
+			],
+			[
+				"basetempl",
+				"MySite/templates/BaseTemplate.html"
+			],
+			[
+				"getlogjs",
+				"site_media/Jquery/Local/GetLog.js"
+			],
+			[
+				"backschjs",
+				"site_media/Jquery/Local/BackupSchedule.js"
+			],
+			[
+				"badaht",
+				"MySite/templates/BackupDatabase.html"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": false,
+	"side_bar_width": 247.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
