@@ -90,6 +90,7 @@ Bisection method utilises the concept of binary search to divide something into 
 A common example application of bisection method is to find the square root of a number (upto any number of decimal places as required). When finding the square root, we must decide when we are satisfied with the result i.e; should we find a square root accurate upto 5 decimal places or 3 decimal places.
 
 Let's say we want to find the square root of 25. We consider the range 0 to 25 as our search space for finding the square root. Calculate the mdipoint and check to see if the square (midpoint\*midpoint) of the midpoint is equal to 25. If not, check to see if the square is greater or less than 25. Then search in either left or right parts of the midpoint accordingly. The process is illustrated in the picture below:
+
 <img src="../../media/algorithm_bisection_method.jpg" width="350px" alt="bisection technique demo">
 
 **Pseudocode for finding square root using bisection method**
