@@ -3,6 +3,7 @@
 Binary search is a technique to find an element in a **sorted** array. It works by dividing the array into two parts, left and right. It first checks to see if the element we're searching for is equal to the *midpoint* of the splitted parts. If it is, we return the position of the midpoint. If not, we compare the element we're searching for with the midpoint and see if it is either greater than or less than the midpoint's value. If the value at midpoint is less than the item we're searching for, we discard whatever is in the left side and start the search again on the right part (right subarray). Similarly, if the value of midpoint is greater than the search item, we discard whatever is in the right side and search on the left subarray.
 
 The process is illustrated in the picture below:
+
 <img src="../../media/binary_search.jpg" width="400px" alt="binary search demo">
 
 **Pseudocode for finding an item in a sorted array using binary search**
@@ -74,7 +75,7 @@ print(binary_search(A, -40))
 
 Binary search works in O(lg(*n*)) time complexity, as it halves its search space at each step. As such, this algorithm is extremely fast and can find elements in a really big array in only a very small amount of steps. For example, as illustrated in the example below, it can find any element in an array of size 100,000,000 (100 million) in just ~26 steps. Compare this to linear search, for which (in worst case), you may have to loop over all 100 million items to find the element you're looking for.
 
-*NOTE: lg(n) = log<sub>2</sub>n*
+> NOTE: lg(n) = log<sub>2</sub>n
 
 ```python
 import math
