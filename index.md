@@ -1,3 +1,5 @@
+<img src="https://smallseotools.com/counterDisplay?code=dfbffd319409cb464386cda49668b530&style=0013&pad=5&type=page&initCount=1"  title="Web Counter" Alt="Web Counter" border="0">
+
 ## Programming topics & techniques
 
 ### Algorithms
