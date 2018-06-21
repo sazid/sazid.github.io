@@ -1,27 +1,25 @@
+# Binary search
 
-## Binary search
 Binary search is a technique to find an element in a **sorted** array. It works by dividing the array into two parts, left and right. It first checks to see if the element we're searching for is equal to the *midpoint* of the splitted parts. If it is, we return the position of the midpoint. If not, we compare the element we're searching for with the midpoint and see if it is either greater than or less than the midpoint's value. If the value at midpoint is less than the item we're searching for, we discard whatever is in the left side and start the search again on the right part (right subarray). Similarly, if the value of midpoint is greater than the search item, we discard whatever is in the right side and search on the left subarray.
 
 The process is illustrated in the picture below:
 
 <img src="../../media/binary_search.jpg" width="400px" alt="binary search demo">
 
-**Pseudocode for finding an item in a sorted array using binary search**
-```
-1. A: array of items
-2. start = 0
-3. end = A.length - 1
-4. mid = (begin + end) / 2
-5. IF item == A[mid]: THEN
-    6. Found the number
-7. ELSE IF item > A[mid]: THEN
-    8. begin = mid + 1
-    9. GOTO step 4
-10. ELSE:
-    11. end = mid - 1
-    12. GOTO step 4
-```
+    Pseudocode for finding an item in a sorted array using binary search
 
+    1. A: array of items
+    2. start = 0
+    3. end = A.length - 1
+    4. mid = (begin + end) / 2
+    5. IF item == A[mid]: THEN
+        6. Found the number
+    7. ELSE IF item > A[mid]: THEN
+        8. begin = mid + 1
+        9. GOTO step 4
+    10. ELSE:
+        11. end = mid - 1
+        12. GOTO step 4
 
 ```python
 def binary_search(A, item):
@@ -31,7 +29,7 @@ def binary_search(A, item):
     '''
     begin = 0
     end = len(A) - 1
-    
+
     while (begin <= end):
         mid = int((begin + end) / 2)
         if item == A[mid]:
@@ -40,11 +38,10 @@ def binary_search(A, item):
             begin = mid + 1
         else:
             end = mid - 1
-    
+
     # if the item is not found, return None
     return None
 ```
-
 
 ```python
 A = [3, 2, 9, 10, 21, 5, -2, -4]
@@ -72,7 +69,6 @@ print(binary_search(A, -40))
     4
     None
 
-
 Binary search works in O(lg(*n*)) time complexity, as it halves its search space at each step. As such, this algorithm is extremely fast and can find elements in a really big array in only a very small amount of steps. For example, as illustrated in the example below, it can find any element in an array of size 100,000,000 (100 million) in just ~26 steps. Compare this to linear search, for which (in worst case), you may have to loop over all 100 million items to find the element you're looking for.
 
 > NOTE: lg(n) = log<sub>2</sub>n
@@ -94,24 +90,22 @@ Let's say we want to find the square root of 25. We consider the range 0 to 25 a
 
 <img src="../../media/algorithm_bisection_method.jpg" width="350px" alt="bisection technique demo">
 
-**Pseudocode for finding square root using bisection method**
-```
-1. n: any real positive number
-2. error_threshold = 0.000001
-3. begin = 0
-4. end = n
-5. mid = (begin + end) / 2
-6. square = mid*mid
-7. BEGIN IF |n - square| < error_threshold: THEN
-    8. Found the number
-9. ELSE IF square < n: THEN
-    10. begin = mid
-    11. GOTO step 5
-12. ELSE:
-    13. end = mid
-    14. GOTO step 5
-```
+    Pseudocode for finding square root using bisection method
 
+    1. n: any real positive number
+    2. error_threshold = 0.000001
+    3. begin = 0
+    4. end = n
+    5. mid = (begin + end) / 2
+    6. square = mid*mid
+    7. BEGIN IF |n - square| < error_threshold: THEN
+        8. Found the number
+    9. ELSE IF square < n: THEN
+        10. begin = mid
+        11. GOTO step 5
+    12. ELSE:
+        13. end = mid
+        14. GOTO step 5
 
 ```python
 accuracy_threshold = 0.000001 # we want the accuracy to be within this threshold
@@ -130,7 +124,6 @@ def square_root(n, e):
             end = mid
     return None
 ```
-
 
 ```python
 square_root(25, accuracy_threshold)
