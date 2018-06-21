@@ -8,7 +8,8 @@
 
 ### Data Structures
 1. [Trie](posts/ds/trie.md)
-2. [Segment Tree (বাংলা) সেগমেন্ট ট্রি](posts/ds/segment-tree.md)
+2. [Segment Tree 1 (বাংলা) সেগমেন্ট ট্রি](posts/ds/segment-tree.md)
+3. **INCOMPLETE** [Segment tree 2 lazy propagation (সেগমেন্ট ট্রি লেজি প্রোপাগেশন)](posts/ds/segment-tree-lazy-propagation.md)
 
 ### Math
 3. [Logarithms](posts/math/logarithms.md)
