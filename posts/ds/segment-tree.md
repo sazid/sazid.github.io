@@ -139,4 +139,4 @@ int main() {
 }
 ```
 
-> NEXT: [Segment tree 2 lazy propagation (সেগমেন্ট ট্রি লেজি প্রোপাগেশন)](posts/ds/segment-tree-lazy-propagation.md)
+> NEXT: [Segment tree 2 lazy propagation (সেগমেন্ট ট্রি লেজি প্রোপাগেশন)](segment-tree-lazy-propagation.md)
