@@ -69,7 +69,7 @@ print(binary_search(A, -40))
     4
     None
 
-Binary search works in O(lg(*n*)) time complexity, as it halves its search space at each step. As such, this algorithm is extremely fast and can find elements in a really big array in only a very small amount of steps. For example, as illustrated in the example below, it can find any element in an array of size 100,000,000 (100 million) in just ~26 steps. Compare this to linear search, for which (in worst case), you may have to loop over all 100 million items to find the element you're looking for.
+Binary search works in O(lg(*n*)) time complexity, as it halves its search space at each step. As such, this algorithm is extremely fast and can find elements in a really big array in only a very small amount of steps. For example, as illustrated in the example below, it can find any element in an array of size 100,000,000 (100 million) in just ~27 steps. Compare this to linear search, for which (in worst case), you may have to loop over all 100 million items to find the element you're looking for.
 
 > NOTE: lg(n) = log<sub>2</sub>n
 
@@ -79,7 +79,6 @@ math.log2(100000000)
 ```
 
     26.575424759098897
-
 
 ## Bisection method/technique
 Bisection method utilises the concept of binary search to divide something into two parts, left and right, and search for the solution in either the left or right part depending on the expected return value.

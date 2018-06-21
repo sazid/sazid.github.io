@@ -138,3 +138,5 @@ int main() {
   return 0;
 }
 ```
+
+> NEXT: [Segment tree 2 lazy propagation (সেগমেন্ট ট্রি লেজি প্রোপাগেশন)](posts/ds/segment-tree-lazy-propagation.md)
