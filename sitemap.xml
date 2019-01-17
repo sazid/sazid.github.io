@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://sazid.github.io/posts/uva-230/</loc>
+    <lastmod>2019-01-17T17:27:41+06:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://sazid.github.io/posts/hello-world/</loc>
     <lastmod>2019-01-17T15:13:33+06:00</lastmod>
   </url>
@@ -18,17 +23,30 @@
   
   <url>
     <loc>https://sazid.github.io/</loc>
-    <lastmod>2019-01-17T15:13:33+06:00</lastmod>
+    <lastmod>2019-01-17T17:27:41+06:00</lastmod>
   </url>
   
   <url>
     <loc>https://sazid.github.io/posts/</loc>
-    <lastmod>2019-01-17T15:13:33+06:00</lastmod>
+    <lastmod>2019-01-17T17:27:41+06:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://sazid.github.io/tags/programming/</loc>
+    <lastmod>2019-01-17T17:27:41+06:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://sazid.github.io/tags/</loc>
+    <lastmod>2019-01-17T17:27:41+06:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://sazid.github.io/categories/thought-process/</loc>
+    <lastmod>2019-01-17T17:27:41+06:00</lastmod>
     <priority>0</priority>
   </url>
   

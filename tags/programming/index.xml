@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Home on sazid</title>
-    <link>https://sazid.github.io/</link>
-    <description>Recent content in Home on sazid</description>
+    <title>Programming on sazid</title>
+    <link>https://sazid.github.io/tags/programming/</link>
+    <description>Recent content in Programming on sazid</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2019 — Mohammed Sazid Al Rashid — All rights reserved.</copyright>
     <lastBuildDate>Thu, 17 Jan 2019 17:27:41 +0600</lastBuildDate>
     
-	<atom:link href="https://sazid.github.io/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://sazid.github.io/tags/programming/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -22,26 +22,6 @@
 ok, so I got to learn a new word mutilate: inflict serious damage.
 People don&amp;rsquo;t put books back where they should and instead they are kept in the main desk, this might be a major line&amp;hellip;or maybe not, let&amp;rsquo;s continue.
 Periodically, the librarians will ask your program for a list of books that have been returned so the books can be returned to their correct places on the shelves.</description>
-    </item>
-    
-    <item>
-      <title>Hello, World!</title>
-      <link>https://sazid.github.io/posts/hello-world/</link>
-      <pubDate>Thu, 17 Jan 2019 15:13:33 +0600</pubDate>
-      
-      <guid>https://sazid.github.io/posts/hello-world/</guid>
-      <description>Hello, World! So&amp;hellip; let&amp;rsquo;s embark on a journey to capture things that I should try to remember later on.</description>
-    </item>
-    
-    <item>
-      <title>About</title>
-      <link>https://sazid.github.io/about/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://sazid.github.io/about/</guid>
-      <description>who cares though&amp;hellip; kidding :p
-I&amp;rsquo;m Mohammed Sazid Al Rashid. A human.
- GitHub Stackoverflow Stackoverflow Story LinkedIn  If you want to contact me, send me an email to sazidz outlook (i guess you get the idea&amp;hellip;)</description>
     </item>
     
   </channel>
