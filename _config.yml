@@ -1,9 +1,0 @@
-title: Sazid
-description: My personal site
-google_analytics: UA-57977139-2
-theme: jekyll-theme-cayman
-
-gems:
-  - jekyll-mentions
-  - jekyll-relative-links
-
