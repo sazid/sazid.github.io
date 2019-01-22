@@ -14,10 +14,10 @@
     
     <item>
       <title>Sqrt Newton Raphson</title>
-      <link>https://sazid.github.io/posts/sqrt-newton-raphson/</link>
+      <link>https://sazid.github.io/posts/2019/01/18/sqrt-newton-raphson/</link>
       <pubDate>Fri, 18 Jan 2019 12:26:47 +0600</pubDate>
       
-      <guid>https://sazid.github.io/posts/sqrt-newton-raphson/</guid>
+      <guid>https://sazid.github.io/posts/2019/01/18/sqrt-newton-raphson/</guid>
       <description>Suddenly I had the urge to learn the basics of Go (lang) and see what&amp;rsquo;s so special about it. So, I went to https://golang.org/ and from there I started the &amp;ldquo;A Tour of Go&amp;rdquo; short tutorial. It&amp;rsquo;s kind of like an interactive tutorial. As I progressed through the tutorial, I found a very interesting algorithm for finding the square root of a number. It&amp;rsquo;s the Newton-Raphson root-finding algorithm. I literally forgot about it, but I learnt about this in my 5th semester&amp;rsquo;s math course.</description>
     </item>
     
