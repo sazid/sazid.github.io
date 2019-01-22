@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2019 — Mohammed Sazid Al Rashid — All rights reserved.</copyright>
-    <lastBuildDate>Fri, 18 Jan 2019 12:26:47 +0600</lastBuildDate>
+    <lastBuildDate>Tue, 22 Jan 2019 22:31:08 +0600</lastBuildDate>
     
 	<atom:link href="https://sazid.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15,18 +15,18 @@
     <item>
       <title>Algorithms</title>
       <link>https://sazid.github.io/categories/algorithms/</link>
-      <pubDate>Fri, 18 Jan 2019 12:26:47 +0600</pubDate>
+      <pubDate>Tue, 22 Jan 2019 22:31:08 +0600</pubDate>
       
       <guid>https://sazid.github.io/categories/algorithms/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Problem Solving</title>
-      <link>https://sazid.github.io/categories/problem-solving/</link>
-      <pubDate>Fri, 18 Jan 2019 12:26:47 +0600</pubDate>
+      <title>Programming</title>
+      <link>https://sazid.github.io/categories/programming/</link>
+      <pubDate>Tue, 22 Jan 2019 22:31:08 +0600</pubDate>
       
-      <guid>https://sazid.github.io/categories/problem-solving/</guid>
+      <guid>https://sazid.github.io/categories/programming/</guid>
       <description></description>
     </item>
     

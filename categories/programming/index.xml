@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>C&#43;&#43; on sazid</title>
-    <link>https://sazid.github.io/tags/c&#43;&#43;/</link>
-    <description>Recent content in C&#43;&#43; on sazid</description>
+    <title>Programming on sazid</title>
+    <link>https://sazid.github.io/categories/programming/</link>
+    <description>Recent content in Programming on sazid</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2019 — Mohammed Sazid Al Rashid — All rights reserved.</copyright>
     <lastBuildDate>Tue, 22 Jan 2019 22:31:08 +0600</lastBuildDate>
     
-	<atom:link href="https://sazid.github.io/tags/c++/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://sazid.github.io/categories/programming/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -20,6 +20,15 @@
       <guid>https://sazid.github.io/posts/string-hashing/</guid>
       <description>MathJax.Hub.Config({ tex2jax: {inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]]} });  I&amp;rsquo;ve always wondered how c++ std::map works. Turns out its typically implemented as a Binary Search Tree (BST for short). Why a BST? The most probable answer I can come up with, is how hashing is implemented. How? Let&amp;rsquo;s see.
 I&amp;rsquo;ll just go over string hashing as I don&amp;rsquo;t know the specifics about how other data types are hashed. Basically, string hashing is a process of turning any string into a unique integer that identifies only that particular string.</description>
+    </item>
+    
+    <item>
+      <title>Sqrt Newton Raphson</title>
+      <link>https://sazid.github.io/posts/sqrt-newton-raphson/</link>
+      <pubDate>Fri, 18 Jan 2019 12:26:47 +0600</pubDate>
+      
+      <guid>https://sazid.github.io/posts/sqrt-newton-raphson/</guid>
+      <description>Suddenly I had the urge to learn the basics of Go (lang) and see what&amp;rsquo;s so special about it. So, I went to https://golang.org/ and from there I started the &amp;ldquo;A Tour of Go&amp;rdquo; short tutorial. It&amp;rsquo;s kind of like an interactive tutorial. As I progressed through the tutorial, I found a very interesting algorithm for finding the square root of a number. It&amp;rsquo;s the Newton-Raphson root-finding algorithm. I literally forgot about it, but I learnt about this in my 5th semester&amp;rsquo;s math course.</description>
     </item>
     
     <item>
