@@ -31,6 +31,30 @@
 
 <div class="post-meta">
     
+
+    
+    <div>
+        <button id="read-aloud-btn" onclick="readAloud()">Read Aloud</button>
+    
+        <script defer>
+            let isReadingAloud = false;
+            
+            function readAloud() {
+                let articleText = new SpeechSynthesisUtterance(document.getElementsByTagName('article')[0].innerText);
+                let btn = document.getElementById('read-aloud-btn');
+
+                if (isReadingAloud) {
+                    btn.innerText = 'Read Aloud';
+                    window.speechSynthesis.cancel();
+                } else {
+                    btn.innerText = 'Stop';
+                    window.speechSynthesis.speak(articleText);
+                }
+                isReadingAloud = !isReadingAloud;
+            }
+        </script>
+    </div>
+        
     <p>...</p>
 </div>
 
