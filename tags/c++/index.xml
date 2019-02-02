@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2019 — Mohammed Sazid Al Rashid — All rights reserved.</copyright>
-    <lastBuildDate>Tue, 22 Jan 2019 22:31:08 +0600</lastBuildDate>
+    <lastBuildDate>Sat, 02 Feb 2019 11:55:20 +0600</lastBuildDate>
     
 	<atom:link href="https://sazid.github.io/tags/c++/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Rabin Karp algorithm</title>
+      <link>https://sazid.github.io/posts/2019/02/02/rabin-karp-algorithm/</link>
+      <pubDate>Sat, 02 Feb 2019 11:55:20 +0600</pubDate>
+      
+      <guid>https://sazid.github.io/posts/2019/02/02/rabin-karp-algorithm/</guid>
+      <description>Rabin Karp algorithm is a string search algorithm with running time of O(|s|+|t|) where s is the pattern to search for and t is the text in which the pattern is to be searched. It utilises a so called rolling hash to compare the strings to find matching patterns.
+The idea is, instead of calculating the hash of every substring over and over again, I just need to calculate the hash once and utilise that to compare two strings in O(1) time.</description>
+    </item>
     
     <item>
       <title>String Hashing</title>

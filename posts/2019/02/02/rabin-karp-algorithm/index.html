@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Rabin Karp algorithm | sazid</title>
+
+    <style>body{margin:40px auto;max-width:650px;line-height:1.6;font-size:18px;color:#444;padding:0 10px}h1,h2,h3{line-height:1.2}div.header h1{padding-top:0;padding-bottom:8px;margin-bottom:24px;font-size:18px;font-weight:400;border-bottom:1px solid}.header-menu{float:right}ul.pagination{list-style-type:none;text-align:center;padding:0}ul.pagination>li{padding:0 8px;display:inline-block}div.footer{border-top:1px solid;text-align:center}img{max-width:100%;max-height:100%;display:block;margin-left:auto;margin-right:auto}</style>
+
+    
+</head>
+
+<body>
+<div class="header">
+    <h1>
+        <a href="/">sazid</a>
+        <div class="header-menu">
+            <a href="/posts/">posts</a>
+            <a href="/categories/">categories</a>
+            <a href="/tags/">tags</a>
+            <a href="/about/">about</a>
+        </div>
+    </h1>
+</div>
+<div id="content">
+
+<header>
+    <h1>Rabin Karp algorithm</h1>
+    
+
+<div class="post-meta">
+    <time datetime="2019-02-02">Feb 2, 2019</time>
+    <br>
+    Categories:
+    <a href="https://sazid.github.io/categories/programming/">programming</a>,
+    <a href="https://sazid.github.io/categories/algorithms/">algorithms</a>
+    <br>
+    Tags:
+    <a href="https://sazid.github.io/tags/problem-solving/">problem-solving</a>,
+    <a href="https://sazid.github.io/tags/c&#43;&#43;/">c&#43;&#43;</a>
+
+    
+    <div>
+        <button id="read-aloud-btn" onclick="readAloud()">Read Aloud</button>
+    
+        <script defer>
+            let isReadingAloud = false;
+            
+            function readAloud() {
+                let articleText = new SpeechSynthesisUtterance(document.getElementsByTagName('article')[0].innerText);
+                let btn = document.getElementById('read-aloud-btn');
+
+                if (isReadingAloud) {
+                    btn.innerText = 'Read Aloud';
+                    window.speechSynthesis.cancel();
+                } else {
+                    btn.innerText = 'Stop';
+                    window.speechSynthesis.speak(articleText);
+                }
+                isReadingAloud = !isReadingAloud;
+            }
+        </script>
+    </div>
+        
+    <p>...</p>
+</div>
+
+</header>
+<article>
+    
+
+<p>Rabin Karp algorithm is a string search algorithm with running time
+of <code>O(|s|+|t|)</code> where <code>s</code> is the pattern to search for and <code>t</code> is
+the text in which the pattern is to be searched. It utilises a so
+called <strong><a href="/posts/2019/01/22/string-hashing/">rolling hash</a></strong> to
+compare the strings to find matching patterns.</p>
+
+<p>The idea is, instead of calculating the hash of every substring
+over and over again, I just need to calculate the hash once and
+utilise that to compare two strings in <code>O(1)</code> time.</p>
+
+<h3 id="algorithm">Algorithm</h3>
+
+<ol>
+<li>Compute the hash of <code>s</code>. This will need <code>O(|s|)</code> time.</li>
+<li>Compute the hash of all prefixes of <code>t</code></li>
+<li>Now, all substrings of <code>t</code> of length <code>|s|</code> can be compared
+to <code>s</code> in <code>O(1)</code> time. So, compare each substring of length <code>|s|</code>
+to <code>s</code> which will take <code>O(|t|)</code> time.</li>
+</ol>
+
+<blockquote>
+<p>Hence, the final time complexity is <code>O(|s|+|t|)</code> (step 1 and 2+3).</p>
+</blockquote>
+
+<h3 id="implementation">Implementation</h3>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">57
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">58
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">59
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">60
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">61
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">62
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">63
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">64
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">65
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#00f">#include</span> <span style="color:#00f">&lt;bits/stdc++.h&gt;</span><span style="color:#00f">
+</span><span style="color:#00f"></span><span style="color:#00f">using</span> <span style="color:#00f">namespace</span> std;
+
+vector&lt;<span style="color:#2b91af">int</span>&gt; rabin_karp(string <span style="color:#00f">const</span>&amp; s, string <span style="color:#00f">const</span>&amp; t) {
+    <span style="color:#00f">const</span> <span style="color:#2b91af">int</span> p = 131;
+    <span style="color:#00f">const</span> <span style="color:#2b91af">int</span> m = 1e9 + 9;
+    <span style="color:#00f">const</span> <span style="color:#2b91af">int</span> S = s.size(), T = t.size();
+
+    <span style="color:#008000">// Precompute all powers of P (mod m)
+</span><span style="color:#008000"></span>    vector&lt;<span style="color:#2b91af">long</span> <span style="color:#2b91af">long</span>&gt; p_pow(max(S, T));
+    p_pow[0] = 1;
+    <span style="color:#00f">for</span> (<span style="color:#2b91af">int</span> i = 1; i &lt; (<span style="color:#2b91af">int</span>)p_pow.size(); ++i)
+        p_pow[i] = (p_pow[i-1] * p) % m;
+    
+    <span style="color:#008000">// Compute hash of all prefixes of t
+</span><span style="color:#008000"></span>    vector&lt;<span style="color:#2b91af">long</span> <span style="color:#2b91af">long</span>&gt; h(T + 1, 0);
+    <span style="color:#00f">for</span> (<span style="color:#2b91af">int</span> i = 0; i &lt; T; ++i)
+        h[i+1] = (h[i] + t[i] * p_pow[i]) % m;
+    
+    <span style="color:#008000">// Compute hash of s
+</span><span style="color:#008000"></span>    <span style="color:#2b91af">long</span> <span style="color:#2b91af">long</span> h_s = 0;
+    <span style="color:#00f">for</span> (<span style="color:#2b91af">int</span> i = 0; i &lt; S; ++i)
+        h_s = (h_s + s[i] * p_pow[i]) % m;
+    
+    <span style="color:#008000">// Match the hash of s (h_s) with the hash of substrings
+</span><span style="color:#008000"></span>    <span style="color:#008000">// of s (h[0..|S|]) and store the matches
+</span><span style="color:#008000"></span>    vector&lt;<span style="color:#2b91af">int</span>&gt; occurences;
+    <span style="color:#00f">for</span> (<span style="color:#2b91af">int</span> i = 0; i + S - 1 &lt; T; ++i) {
+        <span style="color:#008000">// Hash of substring of t from index i+1 to i+S inclusive
+</span><span style="color:#008000"></span>        <span style="color:#2b91af">long</span> <span style="color:#2b91af">long</span> cur_h = (h[i + S] + m - h[i]) % m;
+
+        <span style="color:#008000">/*
+</span><span style="color:#008000">        First index of cur_h is a multiple of p_pow[i], second
+</span><span style="color:#008000">        index is a multiple of p_pow[i+1] and so on... like:
+</span><span style="color:#008000">        t[i]*p_pow[i] + t[i+1]*p_pow[i+1] + t[i+2]*p_pow[i+2]...
+</span><span style="color:#008000">        
+</span><span style="color:#008000">        But, first index of h_s is a multiple of p_pow[0],
+</span><span style="color:#008000">        second index is a multiple of p_pow[1] and so on...
+</span><span style="color:#008000">        s[0]*p_pow[0] + s[1]*p_pow[1] + s[2]*p_pow[2] + ...
+</span><span style="color:#008000">
+</span><span style="color:#008000">        Since, the multiples of both are different, we need to
+</span><span style="color:#008000">        make the multiples same in order to get the same hash.
+</span><span style="color:#008000">        So, we multiply h_s with p_pow[i] to change the multiples
+</span><span style="color:#008000">        to p_pow[i], p_pow[i+1], ... from p_pow[0], p_pow[1]...
+</span><span style="color:#008000">
+</span><span style="color:#008000">        h_s * p_pow[i] thus results to:
+</span><span style="color:#008000">        s[0]*p_pow[i] + s[1]*p_pow[i+1] + s[2]*p_pow[i+2]...
+</span><span style="color:#008000">        */</span>
+        <span style="color:#00f">if</span> (cur_h == h_s * p_pow[i] % m)
+            <span style="color:#008000">// if both hashes are same, we found a match and store it
+</span><span style="color:#008000"></span>            occurences.push_back(i);
+    }
+
+    <span style="color:#00f">return</span> occurences;
+}
+
+<span style="color:#2b91af">int</span> main() {
+    vector&lt;<span style="color:#2b91af">int</span>&gt; pos = rabin_karp(<span style="color:#a31515">&#34;abc&#34;</span>, <span style="color:#a31515">&#34;abcabcbcdabcabc&#34;</span>);
+    <span style="color:#00f">if</span> (pos.size() &gt; 0)
+        <span style="color:#00f">for</span> (<span style="color:#2b91af">int</span> i : pos) cout &lt;&lt; i &lt;&lt; endl;
+    <span style="color:#00f">else</span>
+        cout &lt;&lt; <span style="color:#a31515">&#34;Pattern not found&#34;</span> &lt;&lt; endl;
+
+    <span style="color:#00f">return</span> 0;
+}
+</code></pre></td></tr></table>
+</div>
+</div>
+</article>
+
+
+    </div>
+<div class="footer">
+    
+    
+
+    
+    
+    <div class="copyright">© 2019 — Mohammed Sazid Al Rashid — All rights reserved.</div>
+    
+</div>
+</body>
+
+</html>
