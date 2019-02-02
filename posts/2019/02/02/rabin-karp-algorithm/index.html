@@ -70,28 +70,39 @@
 <article>
     
 
+<!-- MathJax -->
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+
 <p>Rabin Karp algorithm is a string search algorithm with running time
-of <code>O(|s|+|t|)</code> where <code>s</code> is the pattern to search for and <code>t</code> is
+of $O(|s|+|t|)$ where $s$ is the pattern to search for and $t$ is
 the text in which the pattern is to be searched. It utilises a so
 called <strong><a href="/posts/2019/01/22/string-hashing/">rolling hash</a></strong> to
 compare the strings to find matching patterns.</p>
 
-<p>The idea is, instead of calculating the hash of every substring
-over and over again, I just need to calculate the hash once and
-utilise that to compare two strings in <code>O(1)</code> time.</p>
+<p>The idea is, instead of comparing character by character which will
+take $O(|s|*|t|)$ time, we utilise hashes to compare strings in
+$O(|s|+|t|)$ time. For this, we need to precompute hashes of the
+prefixes of $t$ and the hash of $s$ and use the rolling hash
+property to compare the substrings of $t$.</p>
 
 <h3 id="algorithm">Algorithm</h3>
 
 <ol>
-<li>Compute the hash of <code>s</code>. This will need <code>O(|s|)</code> time.</li>
-<li>Compute the hash of all prefixes of <code>t</code></li>
-<li>Now, all substrings of <code>t</code> of length <code>|s|</code> can be compared
-to <code>s</code> in <code>O(1)</code> time. So, compare each substring of length <code>|s|</code>
-to <code>s</code> which will take <code>O(|t|)</code> time.</li>
+<li>Compute the hash of $s$. This will need $O(|s|)$ time.</li>
+<li>Compute the hash of all prefixes of $t$</li>
+<li>Now, all substrings of $t$ of length $|s|$ can be compared
+to $s$ in $O(1)$ time. So, compare each substring of length $|s|$
+to $s$ which will take $O(|t|)$ time.</li>
 </ol>
 
 <blockquote>
-<p>Hence, the final time complexity is <code>O(|s|+|t|)</code> (step 1 and 2+3).</p>
+<p>Hence, the final time complexity is $O(|s|+|t|)$ (step 1 and 2+3).</p>
 </blockquote>
 
 <h3 id="implementation">Implementation</h3>
@@ -189,7 +200,7 @@ vector&lt;<span style="color:#2b91af">int</span>&gt; rabin_karp(string <span sty
         h_s = (h_s + s[i] * p_pow[i]) % m;
     
     <span style="color:#008000">// Match the hash of s (h_s) with the hash of substrings
-</span><span style="color:#008000"></span>    <span style="color:#008000">// of s (h[0..|S|]) and store the matches
+</span><span style="color:#008000"></span>    <span style="color:#008000">// of t (h[0..|S|]) and store the matches
 </span><span style="color:#008000"></span>    vector&lt;<span style="color:#2b91af">int</span>&gt; occurences;
     <span style="color:#00f">for</span> (<span style="color:#2b91af">int</span> i = 0; i + S - 1 &lt; T; ++i) {
         <span style="color:#008000">// Hash of substring of t from index i+1 to i+S inclusive
