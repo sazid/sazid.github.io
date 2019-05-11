@@ -13,7 +13,7 @@
     
     
     <item>
-      <title>C&#43;&#43;</title>
+      <title>c&#43;&#43;</title>
       <link>https://sazid.github.io/tags/c&#43;&#43;/</link>
       <pubDate>Sat, 02 Feb 2019 11:55:20 +0600</pubDate>
       
@@ -22,20 +22,20 @@
     </item>
     
     <item>
-      <title>Go</title>
-      <link>https://sazid.github.io/tags/go/</link>
-      <pubDate>Fri, 18 Jan 2019 12:26:47 +0600</pubDate>
-      
-      <guid>https://sazid.github.io/tags/go/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Problem Solving</title>
+      <title>problem-solving</title>
       <link>https://sazid.github.io/tags/problem-solving/</link>
       <pubDate>Sat, 02 Feb 2019 11:55:20 +0600</pubDate>
       
       <guid>https://sazid.github.io/tags/problem-solving/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>go</title>
+      <link>https://sazid.github.io/tags/go/</link>
+      <pubDate>Fri, 18 Jan 2019 12:26:47 +0600</pubDate>
+      
+      <guid>https://sazid.github.io/tags/go/</guid>
       <description></description>
     </item>
     
