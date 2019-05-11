@@ -48,7 +48,9 @@
             let isReadingAloud = false;
             
             function readAloud() {
-                let articleText = new SpeechSynthesisUtterance(document.getElementsByTagName('article')[0].innerText);
+                let text = document.getElementsByTagName('article')[0].innerText;
+
+                let articleText = new SpeechSynthesisUtterance(text);
                 let btn = document.getElementById('read-aloud-btn');
 
                 if (isReadingAloud) {
