@@ -11,4 +11,6 @@ a:hover { text-decoration: underline; }
 
 .current { text-decoration: underline; }
 
+@media screen and (max-width: 720px) { body { max-width: 100%; width: 100%; margin: 16px; } }
+
 /*# sourceMappingURL=styles.css.map */
