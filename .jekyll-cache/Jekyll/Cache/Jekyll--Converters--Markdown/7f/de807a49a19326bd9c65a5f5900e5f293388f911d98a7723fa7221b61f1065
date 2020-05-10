@@ -1,0 +1,6 @@
+I"/<p>Rabin Karp algorithm is a string search algorithm with running time of
+O(|s|+|t|) where s is the pattern to search for and t is the
+text in which the pattern is to be searched. It utilises a so called
+<strong><a href="">rolling hash</a></strong> to compare the
+strings to find matching patterns.</p>
+:ET

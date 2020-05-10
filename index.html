@@ -1,0 +1,19 @@
+---
+layout: default
+title: Home
+---
+
+<h1>Sazid</h1>
+
+<p>Random thoughts and stuffs that piqued my interest.</p>
+
+<div>
+  {% for post in site.posts %}
+  <div>
+    <span>{{ post.date | date_to_string }}</span>
+    <a href="{{ post.url }}">{{ post.title }}</a>
+  </div>
+  {% endfor %}
+</div>
+
+<p>MIT License</p>

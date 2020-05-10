@@ -1,0 +1,15 @@
+body { max-width: 80ch; font-family: monospace; margin-left: auto; margin-right: auto; }
+
+img { max-width: 80ch; }
+
+a { text-decoration: none; }
+
+a:hover { text-decoration: underline; }
+
+.non-current { color: grey; }
+
+.current { text-decoration: underline; color: black; }
+
+div.highlighter-rouge { border-bottom: 1px solid lightgrey; }
+
+/*# sourceMappingURL=styles.css.map */

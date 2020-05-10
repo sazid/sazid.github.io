@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Rabin Karp Algorithm</title>
+<meta name="generator" content="Jekyll v4.0.1" />
+<meta property="og:title" content="Rabin Karp Algorithm" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Rabin Karp algorithm is a string search algorithm with running time of O(|s|+|t|) where s is the pattern to search for and t is the text in which the pattern is to be searched. It utilises a so called rolling hash to compare the strings to find matching patterns." />
+<meta property="og:description" content="Rabin Karp algorithm is a string search algorithm with running time of O(|s|+|t|) where s is the pattern to search for and t is the text in which the pattern is to be searched. It utilises a so called rolling hash to compare the strings to find matching patterns." />
+<link rel="canonical" href="http://localhost:4000/2019/02/02/rabin-karp-algorithm.html" />
+<meta property="og:url" content="http://localhost:4000/2019/02/02/rabin-karp-algorithm.html" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-02-02T00:00:00+06:00" />
+<script type="application/ld+json">
+{"@type":"BlogPosting","headline":"Rabin Karp Algorithm","dateModified":"2019-02-02T00:00:00+06:00","datePublished":"2019-02-02T00:00:00+06:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2019/02/02/rabin-karp-algorithm.html"},"description":"Rabin Karp algorithm is a string search algorithm with running time of O(|s|+|t|) where s is the pattern to search for and t is the text in which the pattern is to be searched. It utilises a so called rolling hash to compare the strings to find matching patterns.","url":"http://localhost:4000/2019/02/02/rabin-karp-algorithm.html","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <title>Rabin Karp Algorithm | sazid</title>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+  </head>
+  <body>
+    <nav>
+  
+  <a href="/"
+     
+     class="non-current"
+     >
+    Home</a>
+  
+  <a href="/about.html"
+     
+     class="non-current"
+     >
+    About</a>
+  
+</nav>
+
+    <h1>Rabin Karp Algorithm</h1>
+<p>02 Feb 2019</p>
+
+<p>Rabin Karp algorithm is a string search algorithm with running time of
+O(|s|+|t|) where s is the pattern to search for and t is the
+text in which the pattern is to be searched. It utilises a so called
+<strong><a href="">rolling hash</a></strong> to compare the
+strings to find matching patterns.</p>
+
+<p>The idea is, instead of comparing character by character which will
+take O(|s|*|t|) time, we utilise hashes to compare strings in
+O(|s|+|t|) time. For this, we need to precompute hashes of the
+prefixes of t and the hash of s and use the rolling hash property
+to compare the substrings of t.</p>
+
+<h2 id="algorithm">Algorithm</h2>
+<ol>
+  <li>Compute the hash of s. This will need O(|s|) time.</li>
+  <li>Compute the hash of all prefixes of t.</li>
+  <li>Now, all substrings of t of length |s| can be compared to s in O(1) time. So, compare each substring of length |s| to s which will take O(|t|) time.</li>
+</ol>
+
+<p>Hence, the final time complexity is O(|s|+|t|) (step 1 and 2+3).</p>
+
+<h2 id="implementation">Implementation</h2>
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;bits/stdc++.h&gt;
+</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">rabin_karp</span><span class="p">(</span><span class="n">string</span> <span class="k">const</span><span class="o">&amp;</span> <span class="n">s</span><span class="p">,</span> <span class="n">string</span> <span class="k">const</span><span class="o">&amp;</span> <span class="n">t</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">const</span> <span class="kt">int</span> <span class="n">p</span> <span class="o">=</span> <span class="mi">131</span><span class="p">;</span>
+    <span class="k">const</span> <span class="kt">int</span> <span class="n">m</span> <span class="o">=</span> <span class="mf">1e9</span> <span class="o">+</span> <span class="mi">9</span><span class="p">;</span>
+    <span class="k">const</span> <span class="kt">int</span> <span class="n">S</span> <span class="o">=</span> <span class="n">s</span><span class="p">.</span><span class="n">size</span><span class="p">(),</span> <span class="n">T</span> <span class="o">=</span> <span class="n">t</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
+
+    <span class="c1">// Precompute all powers of P (mod m)</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">long</span> <span class="kt">long</span><span class="o">&gt;</span> <span class="n">p_pow</span><span class="p">(</span><span class="n">max</span><span class="p">(</span><span class="n">S</span><span class="p">,</span> <span class="n">T</span><span class="p">));</span>
+    <span class="n">p_pow</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">p_pow</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+        <span class="n">p_pow</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">p_pow</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">p</span><span class="p">)</span> <span class="o">%</span> <span class="n">m</span><span class="p">;</span>
+    
+    <span class="c1">// Compute hash of all prefixes of t</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">long</span> <span class="kt">long</span><span class="o">&gt;</span> <span class="n">h</span><span class="p">(</span><span class="n">T</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">T</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+        <span class="n">h</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">h</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">p_pow</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">%</span> <span class="n">m</span><span class="p">;</span>
+    
+    <span class="c1">// Compute hash of s</span>
+    <span class="kt">long</span> <span class="kt">long</span> <span class="n">h_s</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">S</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+        <span class="n">h_s</span> <span class="o">=</span> <span class="p">(</span><span class="n">h_s</span> <span class="o">+</span> <span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">p_pow</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">%</span> <span class="n">m</span><span class="p">;</span>
+    
+    <span class="c1">// Match the hash of s (h_s) with the hash of substrings</span>
+    <span class="c1">// of t (h[0..|S|]) and store the matches</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">occurences</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">+</span> <span class="n">S</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">&lt;</span> <span class="n">T</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// Hash of substring of t from index i+1 to i+S inclusive</span>
+        <span class="kt">long</span> <span class="kt">long</span> <span class="n">cur_h</span> <span class="o">=</span> <span class="p">(</span><span class="n">h</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="n">S</span><span class="p">]</span> <span class="o">+</span> <span class="n">m</span> <span class="o">-</span> <span class="n">h</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">%</span> <span class="n">m</span><span class="p">;</span>
+
+        <span class="cm">/*
+        First index of cur_h is a multiple of p_pow[i], second
+        index is a multiple of p_pow[i+1] and so on... like:
+        t[i]*p_pow[i] + t[i+1]*p_pow[i+1] + t[i+2]*p_pow[i+2]...
+        
+        But, first index of h_s is a multiple of p_pow[0],
+        second index is a multiple of p_pow[1] and so on...
+        s[0]*p_pow[0] + s[1]*p_pow[1] + s[2]*p_pow[2] + ...
+
+        Since, the multiples of both are different, we need to
+        make the multiples same in order to get the same hash.
+        So, we multiply h_s with p_pow[i] to change the multiples
+        to p_pow[i], p_pow[i+1], ... from p_pow[0], p_pow[1]...
+
+        h_s * p_pow[i] thus results to:
+        s[0]*p_pow[i] + s[1]*p_pow[i+1] + s[2]*p_pow[i+2]...
+        */</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">cur_h</span> <span class="o">==</span> <span class="n">h_s</span> <span class="o">*</span> <span class="n">p_pow</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">%</span> <span class="n">m</span><span class="p">)</span>
+            <span class="c1">// if both hashes are same, we found a match and store it</span>
+            <span class="n">occurences</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="n">occurences</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">pos</span> <span class="o">=</span> <span class="n">rabin_karp</span><span class="p">(</span><span class="s">"abc"</span><span class="p">,</span> <span class="s">"abcabcbcdabcabc"</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">pos</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">:</span> <span class="n">pos</span><span class="p">)</span> <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">i</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="k">else</span>
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Pattern not found"</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+
+  </body>
+</html>
