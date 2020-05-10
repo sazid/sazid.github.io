@@ -4,7 +4,7 @@ title: About
 ---
 # About
 
-I'm Mohammed Sazid Al Rashid, a human and a Muslim.
+I'm Mohammed Sazid Al Rashid, a human. Oh, and I also code.
 
 * [GitHub](https://github.com/sazid)
 * [Stackoverflow](https://stackoverflow.com/users/1941132/sazid)

@@ -1,14 +1,13 @@
 ---
 ---
 Suddenly I had the urge to learn the basics of Go (lang) and see
-what's so special about it. So, I went to https://golang.org/ and from
-there I started the "A Tour of Go" short tutorial. It's kind of like
-an interactive tutorial. As I progressed through the tutorial, I found
-a very interesting algorithm for finding the square root of a
-number. It's the **Newton-Raphson root-finding algorithm**. I
-literally forgot about it, but I learnt about this in my 5th
-semester's math course.
-https://en.wikipedia.org/wiki/Newton%27s_method
+what's so special about it. So, I went to golang and from
+there I started the "[A Tour of Go](https://tour.golang.org/)" short tutorial. It's kind of like
+an interactive tutorial. As I progressed through the tutorial, I
+found a very interesting algorithm for finding the square root of a
+number. It's the [Newton-Raphson](https://en.wikipedia.org/wiki/Newton%27s_method)
+root-finding algorithm. I literally forgot about
+it, but I learnt about this in my 5th semester's math course.
 
 I should quote one important part from the tour:
 
@@ -46,7 +45,7 @@ func main() {
 }
 ```
 
-Output:
+## Output
 
 ```
 1 1 1
