@@ -1,3 +1,0 @@
-I"<p>I’ve always wondered how c++ <code class="highlighter-rouge">std::map</code> works. Turns out its
-typically implemented as a <em>Binary Search Tree (BST for short)</em>. Why a BST? The most probable answer I can come up with, is how hashing is implemented. How? Let’s see.</p>
-:ET
