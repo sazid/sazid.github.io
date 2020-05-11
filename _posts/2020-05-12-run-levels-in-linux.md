@@ -6,7 +6,7 @@ cool.
 
 Run levels are *states* or *modes* that is defined by the services listed in the
 **/etc/rc.d/rc<x>.d**, where **<x>** is the number of the runlevel. More
-information: [Fedora guides: Runlevels](https://docs.fedoraproject.org/en-US/Fedora/12/html/Deployment_Guide/ch-services.html#s1-services-runlevels).
+information: (Fedora guides: Runlevels)[https://docs.fedoraproject.org/en-US/Fedora/12/html/Deployment_Guide/ch-services.html#s1-services-runlevels].
 
 The following runlevels exist:
 * 0 - Halt
