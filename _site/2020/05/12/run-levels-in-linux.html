@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Run Levels In Linux</title>
+<meta name="generator" content="Jekyll v4.0.1" />
+<meta property="og:title" content="Run Levels In Linux" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Self-documenting… going to try out dwm tiling window manager. Seems pretty cool." />
+<meta property="og:description" content="Self-documenting… going to try out dwm tiling window manager. Seems pretty cool." />
+<link rel="canonical" href="https://sazid.github.io/2020/05/12/run-levels-in-linux.html" />
+<meta property="og:url" content="https://sazid.github.io/2020/05/12/run-levels-in-linux.html" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-05-12T00:00:00+06:00" />
+<script type="application/ld+json">
+{"@type":"BlogPosting","headline":"Run Levels In Linux","dateModified":"2020-05-12T00:00:00+06:00","datePublished":"2020-05-12T00:00:00+06:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://sazid.github.io/2020/05/12/run-levels-in-linux.html"},"description":"Self-documenting… going to try out dwm tiling window manager. Seems pretty cool.","url":"https://sazid.github.io/2020/05/12/run-levels-in-linux.html","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <title>Run Levels In Linux | sazid</title>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+  </head>
+  <body>
+    <nav>
+  
+  <a href="/"
+     
+     class="non-current"
+     >
+    Home</a>
+  
+  <a href="/about.html"
+     
+     class="non-current"
+     >
+    About</a>
+  
+</nav>
+
+    <h1>Run Levels In Linux</h1>
+<p>12 May 2020</p>
+
+<p>Self-documenting… going to try out <strong>dwm</strong> tiling window manager. Seems pretty
+cool.</p>
+
+<p>Run levels are <em>states</em> or <em>modes</em> that is defined by the services listed in the
+**/etc/rc.d/rc<x>.d**, where **<x>** is the number of the runlevel. More
+information: [Fedora guides: Runlevels](https://docs.fedoraproject.org/en-US/Fedora/12/html/Deployment_Guide/ch-services.html#s1-services-runlevels).</x></x></p>
+
+<p>The following runlevels exist:</p>
+<ul>
+  <li>0 - Halt</li>
+  <li>1 - Single-user mode</li>
+  <li>2 - Not used (user-definable)</li>
+  <li>3 - Full multi-user mode</li>
+  <li>4 - Not used (user-definable)</li>
+  <li>5 - Full multiuser mode (with an X-based login screen)</li>
+  <li>6 - Reboot</li>
+</ul>
+
+<p>When logging in, if you need to login via a text-only screen then it means
+you’re running in runlevel 3. If a graphical login screen is present, you’re
+running in runlevel 5.</p>
+
+<p>The default runlevel can be changed by modifying the <strong>/etc/inittab</strong> file,
+which should contain a line similar to the following</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>id:5:initdefault:
+</code></pre></div></div>
+
+<p>Changing the number in this line to the desired runlevel. Need a reboot to take
+effect.</p>
+
+
+  </body>
+</html>
