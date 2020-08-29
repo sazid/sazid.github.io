@@ -1,8 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@font-face {
+    font-family: 'JetBrains Mono';
+    src: url('/fonts/JetBrainsMono-Regular.woff2') format('woff2');
+}
 
 body {
-    max-width: 80ch;
-    font-family: 'Roboto Mono', monospace;
+    max-width: 70ch;
+    font-family: 'JetBrains Mono', 'Roboto Mono', monospace;
     margin-left: auto;
     margin-right: auto;
 }
