@@ -12,38 +12,36 @@ works and how I can apply it in an existing server setup.
   of the fastest wsgi servers for python.
 - A reverse proxy server interfacing the web, listens for requests on
   port 80 (HTTP) and 443 (HTTPS) requests. We use `nginx` for this.
-  `nginx` is also responsible for serving static contents separately,
-  that is, static contents should not hit the wsgi server.
+  `nginx` is also responsible for serving static assets separately,
+  that is, static assets should not hit the wsgi server.
 
-Although I'm saying "we", but it was just me who's managing all the
+Although I'm saying "we", but it's just me who's managing all the
 server setups and I came up with this stack instead of the old one.
 
 ### The old stack
 
 The old stack basically ran on the python based `waitress` server
-which used to listen on port 80, served all static contents through
-the django server, ran as the `root` user and did not support HTTPS.
-This was a very bad choice for a few obvious reasons:
+which used to listen on port 80, served all static assets through the
+django server, ran as the `root` user and did not support HTTPS. This
+was a very bad choice for a few obvious reasons:
 
 - No HTTPS support.
 - Ran as the `root` user. THIS MUST NEVER BE DONE UNLESS YOU KNOW WHAT
   YOU"RE GETTING INTO.
-- Served static contents by the Django application itself.
+- Served static assets by the Django application itself.
 
 Enough of the old stuffs! In our case, `nginx` just routed all the
 requests to the wsgi server running on port 8000. We do not use
 sockets for this.
 
-> I tried a configuration with `systemd` once, to start the wsgi
-> server to create a socket, but its just too much of a hassle and I
-> didn't see any additional benefits in our case (pardon me, I'm not
-> really that knowledgable in these areas... specially with `systemd`
-> services and how each service depend on each other, plus socket
-> stuffs). Besides, starting a server on a port just seemed more
-> portable to me, for example, if we have the wsgi server running on
-> another machine.
-
----
+*Side note: I tried a configuration with `systemd` once, to start the
+wsgi server to create a socket, but its just too much of a hassle and
+I didn't see any additional benefits in our case (pardon me, I'm not
+really that knowledgable in these areas... specially with `systemd`
+services and how each service depend on each other, plus socket
+stuffs). Besides, starting a server on a port just seemed more
+portable to me, for example, if we have the wsgi server running on
+another machine.*
 
 It was very simple to modify the `nginx` configuration file we have,
 to enable load balancing. First, I created an `upstream server_pool`
@@ -101,8 +99,8 @@ enough.
 
 This configuration can be easily extended so that the wsgi servers run
 on different machines, the database on another machine and the static
-files on another machine. In that case, changing the `localhost:8000`
-to an IP address should do, have yet to try this setup though. Maybe,
-I'll try it when I get some time next.
+files on yet another machine. In that case, changing the
+`localhost:8000` to an IP address should do, I have yet to try this
+setup though. Maybe, I'll try it when I get some time next.
 
 End.
