@@ -1,4 +1,5 @@
 ---
+title: Using Emacs as default editor
 ---
 
 I've learnt the basics of vim a few years ago and I've been able to
