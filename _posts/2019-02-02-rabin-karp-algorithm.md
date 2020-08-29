@@ -2,23 +2,23 @@
 ---
 
 Rabin Karp algorithm is a string search algorithm with running time of
-O(\|s\|+\|t\|) where s is the pattern to search for and t is the
-text in which the pattern is to be searched. It utilises a so called
-[rolling hash]({% link _posts/2019-01-22-string-hashing.md %}) to compare the strings to
-find matching patterns.
+O(\|s\|+\|t\|) where s is the pattern to search for and t is the text
+in which the pattern is to be searched. It utilises a so called
+[rolling hash]({% link _posts/2019-01-22-string-hashing.md %}) to
+compare the strings to find matching patterns.
 
 The idea is, instead of comparing character by character which will
 take O(\|s\|*\|t\|) time, we utilise hashes to compare strings in
 O(\|s\|+\|t\|) time. For this, we need to precompute hashes of the
-prefixes of t and the hash of s and use the rolling hash property
-to compare the substrings of t.
+prefixes of t and the hash of s and use the rolling hash property to
+compare the substrings of t.
 
 ## Algorithm
 1. Compute the hash of s. This will need O(\|s\|) time.
 2. Compute the hash of all prefixes of t.
 3. Now, all substrings of t of length \|s\| can be compared to s in
-O(1) time. So, compare each substring of length \|s\| to s which
-will take O(\|t\|) time.
+   O(1) time. So, compare each substring of length \|s\| to s which
+   will take O(\|t\|) time.
 
 Hence, the final time complexity is O(\|s\|+\|t\|) (step 1 and 2+3).
 

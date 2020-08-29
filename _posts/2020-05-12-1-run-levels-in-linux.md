@@ -1,8 +1,8 @@
 ---
 ---
 
-Self-documenting... going to try out **dwm** tiling window manager. Seems pretty
-cool.
+Self-documenting... going to try out **dwm** tiling window manager.
+Seems pretty cool.
 
 Run levels are *states* or *modes* that are defined by the services
 listed in the `/etc/rc.d/rc<x>.d`, where `<x>` is the number of the
@@ -18,23 +18,24 @@ The following runlevels exist:
 * 5 - Full multiuser mode (with an X-based login screen)
 * 6 - Reboot
 
-When logging in, if you need to login via a text-only screen then it means
-you're running in runlevel 3. If a graphical login screen is present, you're
-running in runlevel 5.
+When logging in, if you need to login via a text-only screen then it
+means you're running in runlevel 3. If a graphical login screen is
+present, you're running in runlevel 5.
 
-The default runlevel can be changed by modifying the **/etc/inittab** file,
-which should contain a line similar to the following
+The default runlevel can be changed by modifying the **/etc/inittab**
+file, which should contain a line similar to the following
 
 ```
 id:5:initdefault:
 ```
 
-Changing the number in this line to the desired runlevel. Need a reboot to take
-effect.
+Changing the number in this line to the desired runlevel. Need a
+reboot to take effect.
 
-**UPDATE**: I just found out that the linux system I'm using right now (Fedora
-  32 Workstation) does not use runlevels like this anymore. It uses `systemd`
-  for that purpose. Quoting the `/etc/inittab` file in my system:
+**UPDATE**: I just found out that the linux system I'm using right now
+  (Fedora 32 Workstation) does not use runlevels like this anymore. It
+  uses `systemd` for that purpose. Quoting the `/etc/inittab` file in
+  my system:
 
 ```bash
 # inittab is no longer used.

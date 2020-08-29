@@ -19,7 +19,8 @@ are other ways to generate a hash.
 
 ## Formula
 
-*hash(s) = { s[0] + s[1].p + s[2].p^2 + ... + s[n-1].p^(n-1) } % MOD m*
+*hash(s) = { s[0] + s[1].p + s[2].p^2 + ... + s[n-1].p^(n-1) } % MOD
+m*
 
 > *s* is the target string, *p* is represents power (we'll use the
 powers of a prime number) and, *m* denotes a number to MOD with (this
@@ -36,27 +37,27 @@ using namespace std;
 // In case of uppercase or other letters, set p = 53 and
 // change the c-'a'+1 line to something suitable if necessary
 long long compute_hash(string const& s) {
-	const int p = 31;
-	const int m = 1e9 + 9;
-	long long hash_value = 0;
-	long long p_pow = 1;
-	for (char c : s) {
-		hash_value = (hash_value + (c - 'a' + 1) * p_pow) % m;
-		p_pow = (p_pow * p) % m;
-	}
-	return hash_value;
+    const int p = 31;
+    const int m = 1e9 + 9;
+    long long hash_value = 0;
+    long long p_pow = 1;
+    for (char c : s) {
+        hash_value = (hash_value + (c - 'a' + 1) * p_pow) % m;
+        p_pow = (p_pow * p) % m;
+    }
+    return hash_value;
 }
 
 int main() {
-	cout << compute_hash("a") << endl;
-	cout << compute_hash("b") << endl;
-	cout << compute_hash("c") << endl;
-	cout << compute_hash("abc") << endl;
-	cout << compute_hash("abcd") << endl;
-	cout << compute_hash("sadfasdfasdfadsfasdfasdfasdfasdfas") << endl;
-	cout << compute_hash("sadfasdfasdfadsfasdfasdfasdfasdfaa") << endl;
-	
-	return 0;
+    cout << compute_hash("a") << endl;
+    cout << compute_hash("b") << endl;
+    cout << compute_hash("c") << endl;
+    cout << compute_hash("abc") << endl;
+    cout << compute_hash("abcd") << endl;
+    cout << compute_hash("sadfasdfasdfadsfasdfasdfasdfasdfas") << endl;
+    cout << compute_hash("sadfasdfasdfadsfasdfasdfasdfasdfaa") << endl;
+    
+    return 0;
 }
 ```
 
@@ -75,8 +76,8 @@ int main() {
 As can be seen, we're doing `mod` with a certain integer `m` which is
 a prime number. Selecting a prime for both `p` and `m` is important
 for avoiding collisions (same hash for different strings) as much as
-possible. If we didn't mod with 10^9 + 9, it would be modded when
-the multiplications overflowed the max integer size.
+possible. If we didn't mod with 10^9 + 9, it would be modded when the
+multiplications overflowed the max integer size.
 
 Now, coming to why `std::map` is implemented as a `BST`. It's because
 we can't necessarily take an array of size 10^9 + 9 to store the
