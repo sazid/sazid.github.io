@@ -80,7 +80,7 @@ $ sudo nginx -t
 ```
 
 After this, all I needed to do was increase the number of servers that
-was spin up after each reboot on port 8000, 8001, 8002 and 8003. This
+was spun up after each reboot on port 8000, 8001, 8002 and 8003. This
 was just a simple cron job running a python script:
 
 ```crontab
