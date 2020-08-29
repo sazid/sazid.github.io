@@ -59,7 +59,7 @@ upstream server_pool {
 }
 
 server {
-    server_name zeuz.zeuz.ai;
+    server_name server.com;
 
     # ...
 
