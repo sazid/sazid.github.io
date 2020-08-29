@@ -28,7 +28,9 @@ was a very bad choice for a few obvious reasons:
 - No HTTPS support.
 - Ran as the `root` user. THIS MUST NEVER BE DONE UNLESS YOU KNOW WHAT
   YOU"RE GETTING INTO.
-- Served static assets by the Django application itself.
+- Served static assets by the Django application itself, which is
+  without doubt slower than having the assets serve via some dedicated
+  reverse proxy.
 
 Enough of the old stuffs! In our case, `nginx` just routed all the
 requests to the wsgi server running on port 8000. We do not use
