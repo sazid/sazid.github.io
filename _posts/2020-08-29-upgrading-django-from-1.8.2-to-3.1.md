@@ -57,7 +57,7 @@ jump straight to 2.2. And yes, I could jump directly since the changes
 that are required by 2.0 is the same as required if I upgraded to 2.2
 (I'm obviously talking about our own codebase only. Make no mistake,
 there were quite a lot). So, I went ahead and upgraded the version to
-2.2. The few changes I had to make were:
+2.2. The few changes I had to keep an eye on were:
 
 1. Change import of `reverse`.
     ```python
