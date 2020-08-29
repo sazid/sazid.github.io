@@ -39,9 +39,11 @@ sockets for this.
 > didn't see any additional benefits in our case (pardon me, I'm not
 > really that knowledgable in these areas... specially with `systemd`
 > services and how each service depend on each other, plus socket
-> stuffs). Besdies, starting a server on a port just seemed more
+> stuffs). Besides, starting a server on a port just seemed more
 > portable to me, for example, if we have the wsgi server running on
 > another machine.
+
+---
 
 It was very simple to modify the `nginx` configuration file we have,
 to enable load balancing. First, I created an `upstream server_pool`
