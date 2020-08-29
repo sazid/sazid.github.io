@@ -7,6 +7,7 @@
 body {
     max-width: 70ch;
     font-family: 'JetBrains Mono', 'Roboto Mono', monospace;
+    font-size: 14px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -23,8 +24,9 @@ a {
     color: red;
 }
 
-pre {
-    font-family: 'JetBrains Mono', 'Roboto Mono', monospace;
+code {
+    font-family: 'JetBrains Mono', 'Roboto Mono', monospace !important;
+    font-size: 11px !important;
 }
 
 a:hover {
