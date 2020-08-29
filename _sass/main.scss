@@ -24,9 +24,14 @@ a {
     color: red;
 }
 
+pre.highlight {
+    padding: 8px;
+    background-color: #f8f8f8 !important;
+}
+
 code {
     font-family: 'JetBrains Mono', 'Roboto Mono', monospace !important;
-    font-size: 11px !important;
+    font-size: 14px !important;
 }
 
 a:hover {
