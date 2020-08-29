@@ -4,7 +4,9 @@
 I've finally found a font that I really like. It's the [JetBrains
 Mono](https://www.jetbrains.com/lp/mono/) font family. Very easy to
 discern characters even when the font size is small. Previously I used
-to swap between Consolas, Monaco and Roboto Mono.
+to swap between Consolas, Monaco and Roboto Mono. In fact, if the
+fonts have loaded properly, you're most probably reading this
+paragraph with JetBrains Mono enabled.
 
 Thank you so much to the JetBrains team for this wonderful font and
 for making it free and open source!
