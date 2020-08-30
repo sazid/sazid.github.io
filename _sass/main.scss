@@ -5,6 +5,7 @@
 }
 
 $fontSize: 16px;
+$codeBackground: #27313a;
 
 body {
     max-width: 70ch;
@@ -45,17 +46,17 @@ nav {
 
 pre.highlight {
     padding: 8px;
-    background-color: #f0f0f0 !important;
+    background-color: $codeBackground !important;
 }
 
 code {
     font-family: 'JetBrains Mono', 'Roboto Mono', monospace !important;
     font-size: $fontSize !important;
-    background-color: #f0f0f0 !important;
+    background-color: $codeBackground !important;
 }
 
 .non-current {
-    color: grey;
+    color: #a5a5a5;
 }
 
 .current {
