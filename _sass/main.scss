@@ -27,6 +27,19 @@ a {
     color: red;
 }
 
+a:hover {
+    text-decoration: underline;
+}
+
+.post-list {
+    line-height: 48px;
+}
+
+nav {
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+
 pre.highlight {
     padding: 8px;
     background-color: #f0f0f0 !important;
@@ -36,10 +49,6 @@ code {
     font-family: 'JetBrains Mono', 'Roboto Mono', monospace !important;
     font-size: $fontSize !important;
     background-color: #f0f0f0 !important;
-}
-
-a:hover {
-    text-decoration: underline;
 }
 
 .non-current {
