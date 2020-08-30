@@ -5,7 +5,7 @@
 }
 
 $fontSize: 16px;
-$codeBackground: #27313a;
+$codeColor: #f0f0f0;
 
 body {
     max-width: 70ch;
@@ -13,10 +13,9 @@ body {
     font-size: $fontSize;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 16px;
+    margin-bottom: 16px;
     text-rendering: optimizeLegibility;
-
-    background: #101820FF;
-    color: white;
 }
 
 img {
@@ -28,7 +27,7 @@ img {
 
 a {
     text-decoration: none;
-    color: #FEE715FF;
+    color: red;
 }
 
 a:hover {
@@ -39,24 +38,19 @@ a:hover {
     line-height: 48px;
 }
 
-nav {
-    margin-top: 16px;
-    margin-bottom: 16px;
-}
-
 pre.highlight {
     padding: 8px;
-    background-color: $codeBackground !important;
+    background-color: $codeColor !important;
 }
 
 code {
     font-family: 'JetBrains Mono', 'Roboto Mono', monospace !important;
     font-size: $fontSize !important;
-    background-color: $codeBackground !important;
+    background-color: $codeColor !important;
 }
 
 .non-current {
-    color: #a5a5a5;
+    color: #565656;
 }
 
 .current {
