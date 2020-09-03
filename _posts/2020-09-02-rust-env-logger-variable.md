@@ -1,10 +1,12 @@
 ---
 ---
 
+Self note post.
+
 The `env_logger` crate in Rust which provides the underlying logging
 facilities for the `log` crate requires an environment variable to be
-set which configures the log levels (and subsequently which logs to)
-show in the console - `RUST_LOG`.
+set which configures the log levels (and subsequently which logs to
+show in the console) - `RUST_LOG`.
 
 ## Log levels
 
