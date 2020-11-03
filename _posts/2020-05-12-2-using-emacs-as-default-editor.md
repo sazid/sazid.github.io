@@ -9,13 +9,13 @@ codebases and everytime I tried it, for some reason, I just couldn't
 work with it properly.
 
 Recently, I've started using linux as my daily driver again (took a
-break when I started play Apex Legends on Windows :p). This time,
+break when I started playing Apex Legends on Windows :p). This time,
 linux seems so much more usable to me. Gnome 3 has become quite
 efficient and I think it just stands out on its own as a separate kind
 of desktop environment similar to OSX and Windows. I used to dislike
 how slow and inefficient Gnome 3 was, that's not the case anymore!.
 Well... I still don't like the really big title bars in gui
-applications (take not from Windows & OSX!). However, I love the
+applications (take note from Windows & OSX!). However, I love the
 overview screen when you press the Super key (Windows key).
 
 So, as part of the ongoing endeavour I decided to give emacs a go
