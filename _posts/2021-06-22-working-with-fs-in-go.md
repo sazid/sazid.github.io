@@ -25,8 +25,8 @@ tests between the different parts of the module and all of them were passing.
 However, as I pulled the code on my Windows system today and re-ran the whole
 test suite, I quickly discovered that some of the tests were failing - the ones
 that interacted with the `io/fs.FS`. Debugging through the code, I found that
-`filepath.Join` was joining the path segments with ` \ `, I suddenly remembered
-that `io/fs` works with only ` / ` (forward slashes, even on Windows). Had I not
+`filepath.Join` was joining the path segments with `\`, I suddenly remembered
+that `io/fs` works with only `/` (forward slashes, even on Windows). Had I not
 read the doc before, this may have cost me a few hours of useless fiddling
 around/debugging.
 
