@@ -1,6 +1,7 @@
 ---
 ---
 
+
 GitHub actions is a CI/CD platform just like Jenkins, CircleCI and others. Its
 very easy to use since it directly integrates with the repository. Just create a
 file inside your repo `.github/workflows/workflow_name.yml` and put the
