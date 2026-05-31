@@ -51,6 +51,145 @@ a:hover {
     border: 1px solid #d8d8d8;
 }
 
+.cv-page {
+    width: min(980px, calc(100vw - 32px));
+    margin-left: 50%;
+    transform: translateX(-50%);
+    padding-bottom: 56px;
+    color: #171717;
+    line-height: 1.55;
+}
+
+.cv-header {
+    padding: 28px 0 24px;
+    margin-bottom: 34px;
+    border-bottom: 2px solid #171717;
+}
+
+.cv-label {
+    margin: 0 0 10px;
+    color: #7a1f3d;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.cv-header h1 {
+    margin: 0 0 14px;
+    font-size: 42px;
+    line-height: 1.08;
+}
+
+.cv-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 18px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    color: #3d3d3d;
+}
+
+.cv-meta li {
+    white-space: nowrap;
+}
+
+.cv-download {
+    margin: 22px 0 0;
+}
+
+.cv-download a {
+    display: inline-block;
+    padding: 8px 12px;
+    border: 1px solid #171717;
+    color: #171717;
+    background: #f4f4f4;
+}
+
+.cv-download a:hover {
+    background: #171717;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.cv-section {
+    margin-top: 36px;
+}
+
+.cv-section h2 {
+    padding-bottom: 8px;
+    margin: 0 0 16px;
+    border-bottom: 1px solid #c9c9c9;
+    color: #7a1f3d;
+    font-size: 20px;
+}
+
+.cv-skill-list {
+    margin: 0;
+}
+
+.cv-skill-list div {
+    display: grid;
+    grid-template-columns: 220px minmax(0, 1fr);
+    gap: 16px;
+    padding: 12px 0;
+    border-top: 1px solid #e4e4e4;
+}
+
+.cv-skill-list div:first-child {
+    border-top: 0;
+}
+
+.cv-skill-list dt {
+    font-weight: 700;
+}
+
+.cv-skill-list dd {
+    margin: 0;
+}
+
+.cv-entry {
+    padding: 18px 0 20px;
+    border-top: 1px solid #e4e4e4;
+}
+
+.cv-entry:first-of-type {
+    border-top: 0;
+    padding-top: 0;
+}
+
+.cv-entry-heading {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(220px, 0.72fr);
+    gap: 16px;
+    align-items: baseline;
+}
+
+.cv-entry-heading h3 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.cv-entry-heading p {
+    margin: 0;
+    color: #4d4d4d;
+    text-align: right;
+}
+
+.cv-period {
+    margin: 4px 0 10px;
+    color: #6a6a6a;
+}
+
+.cv-entry ul {
+    padding-left: 22px;
+    margin: 0;
+}
+
+.cv-entry li + li {
+    margin-top: 8px;
+}
+
 pre.highlight {
     padding: 8px;
     background-color: $codeColor !important;
@@ -74,5 +213,23 @@ code {
     body {
         max-width: 100%;
         margin: 16px;
+    }
+
+    .cv-header h1 {
+        font-size: 30px;
+    }
+
+    .cv-meta li {
+        white-space: normal;
+    }
+
+    .cv-skill-list div,
+    .cv-entry-heading {
+        display: block;
+    }
+
+    .cv-entry-heading p {
+        margin-top: 4px;
+        text-align: left;
     }
 }

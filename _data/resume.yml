@@ -1,0 +1,108 @@
+name: Mohammed Sazid Al Rashid
+location: Dhaka, Bangladesh
+website:
+  label: sazid.github.io
+  url: https://sazid.github.io/
+pdf: /assets/pdfs/Mohammed_Sazid_Al_Rashid.pdf
+profiles:
+  - label: GitHub
+    url: https://github.com/sazid
+  - label: LinkedIn
+    url: https://www.linkedin.com/in/sazidz/
+
+summary:
+  Systems-oriented Technical Lead with 8+ years of experience building
+  high-performance platforms, agentic AI systems, scalable infrastructure, and
+  ground-up systems/developer tools in Rust and Go. Architected ZeuZ's
+  AI-powered codebase analyzer and agentic development workflows, cut operations
+  cost by reducing system CPU usage by 93%, enabled 4000+ daily test
+  deployments, and led scalability initiatives spanning S3-compatible object
+  storage and Kubernetes/k3s planning. Strong focus on reliability, security,
+  and deep systems engineering.
+
+skills:
+  - label: Core Technologies
+    details: Python, TypeScript, Go, Rust, Zig, SQL, Java, React, Django, Node.js/Express, Docker, PostgreSQL, Redis
+  - label: Cloud & Infrastructure
+    details: AWS EC2/S3, S3-compatible object storage, Kubernetes/k3s, Google Cloud BigQuery, Nginx, CI/CD, GitHub Actions, Ansible/Bash, GraphQL, WebSocket
+  - label: AI & Agentic Systems
+    details: LLM orchestration, OpenAI, Claude Agent SDK, OpenAI Codex SDK, OpenCode, agentic code review, agentic CLI tooling, human-in-the-loop automation, LangChain
+
+experience:
+  - role: Technical Lead
+    company: Automation Solutionz
+    location: Remote, Canada
+    period: Mar 2023 - present
+    highlights:
+      - Cut down costs by engineering a scalable test deployment architecture, achieving 93% CPU reduction and 4000+ daily deployments through Redis-based distributed queuing.
+      - Architected and launched ZeuZ's AI-powered Codebase Analyzer microservice, enabling repository analysis, artifact scanning, agentic implementation, and multi-provider LLM orchestration across Claude Agent SDK, OpenAI Codex SDK, and OpenCode.
+      - Built agentic development workflows with worktree isolation, human-in-the-loop feedback, diff/commit review, PR creation, persona-based AI review, and apply/reject/continue flows for developer productivity.
+      - Productionized AI services with Docker/GHCR CI builds, analyzer service routing in Docker Compose, base-branch selection, AI Jobs administration, SQL migrations, structured logging, and OpenTelemetry tracing.
+      - Spearheading the idea, planning, and team-led development of an S3-compatible object storage migration away from single-host disk storage, guiding the move toward shared uploads and preparing ZeuZ for horizontal scaling and k3s/Kubernetes multi-machine deployments.
+      - Implemented secure authentication system using PASETO tokens, fixing 33 vulnerabilities with 10x-30x performance improvement.
+
+  - role: Software Engineer
+    company: Automation Solutionz
+    location: Remote, Canada
+    period: Sept 2020 - Mar 2023
+    highlights:
+      - Transformed monolithic system into microservices architecture and reduced deployment times by 75% through Docker containerization and parallel deployment strategies.
+      - Engineered real-time performance monitoring using BigQuery and Looker Studio for a major telecom client.
+      - Implemented the platform's first authentication layer and real-time log streaming system using Rust/WebSocket.
+
+  - role: Jr. Software Engineer (part time)
+    company: Automation Solutionz
+    location: Remote, Canada
+    period: Jan 2017 - Sept 2020
+    highlights:
+      - Reduced frontend load size by 78% and cut report/log processing time by 90% for 500+ test cases through resource optimization and batch processing.
+      - Upgraded Django from 1.8.2 to 3.1, resolving 100+ vulnerabilities in one day.
+
+projects:
+  - name: BitCode
+    stack: Go, LLM Providers, Agent Tools, Terminal UI
+    link:
+      label: github/bitcode
+      url: https://github.com/sazid/bitcode
+    highlights:
+      - Built a Go agentic coding CLI similar to Codex/Claude Code with TUI/single-shot modes, multi-provider LLM backends, file/shell/web/todo/skill tools, resumable conversations, subagents, context compaction, telemetry, system reminders, and LLM-backed tool guards.
+
+  - name: Redis-compatible Server
+    stack: Rust, mio, RESP, AOF
+    link:
+      label: github/redis
+      url: https://github.com/sazid/redis
+    highlights:
+      - Built a Redis-compatible server from scratch in Rust with a single-threaded mio event loop, per-client buffers, RESP2 parser/encoder, command pipelining, and Redis-style commands.
+      - Implemented storage internals including binary-safe values, lazy/active TTL expiry, memory accounting, AOF append/replay, and maxmemory eviction policies including Sieve.
+
+  - name: Lorust
+    stack: Rust, Tokio, RustPython, TOML
+    link:
+      label: github/lorust
+      url: https://github.com/sazid/lorust
+    highlights:
+      - Built a Rust/Tokio HTTP load tester with rate/duration modes, TOML/RustPython flows, latency/error thresholds, structured metrics, and distributed worker/supervisor groundwork.
+
+  - name: Proglog
+    stack: Go, gRPC
+    link:
+      label: github/proglog
+      url: https://github.com/sazid/proglog
+    highlights:
+      - Implemented a distributed commit-log service modeled on Kafka internals, with gRPC APIs and append/read semantics.
+
+  - name: Shell in Zig
+    stack: Zig, POSIX Shell, Manual Memory Management
+    link:
+      label: CodeCrafters 2026
+      url: https://app.codecrafters.io/
+    highlights:
+      - Side project implementing POSIX shell stages with builtin/external command execution, PATH lookup, cd support, and per-command arena allocation.
+
+education:
+  - institution: American International University Bangladesh
+    degree: BSc in Computer Science and Software Engineering
+    period: 2017 - 2021
+    highlights:
+      - "CGPA: 3.9/4.0"
