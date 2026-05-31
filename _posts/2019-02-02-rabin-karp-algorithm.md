@@ -1,4 +1,5 @@
 ---
+title: Rabin-Karp algorithm
 ---
 
 Rabin Karp algorithm is a string search algorithm with running time of

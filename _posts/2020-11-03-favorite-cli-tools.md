@@ -1,4 +1,5 @@
 ---
+title: Favorite CLI tools
 ---
 
 A personal list of some of the best CLI tools I've found so far

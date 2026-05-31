@@ -1,4 +1,5 @@
 ---
+title: Rusty stuffs
 ---
 
 Hello, 2021!

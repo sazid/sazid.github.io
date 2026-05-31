@@ -1,4 +1,5 @@
 ---
+title: Newton-Raphson
 ---
 Suddenly I had the urge to learn the basics of Go (lang) and see
 what's so special about it. So, I went to golang and from there I

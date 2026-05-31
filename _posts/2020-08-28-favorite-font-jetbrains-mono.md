@@ -1,4 +1,5 @@
 ---
+title: "Favorite font: JetBrains Mono"
 ---
 
 I've finally found a font that I really like. It's the [JetBrains

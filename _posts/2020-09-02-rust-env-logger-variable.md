@@ -1,4 +1,5 @@
 ---
+title: Rust env_logger variable
 ---
 
 Self note post.

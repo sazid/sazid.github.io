@@ -1,4 +1,5 @@
 ---
+title: New keyboard and mouse
 ---
 
 I've been using A4TECH Comfort Key Rounded Keycaps for quite sometime

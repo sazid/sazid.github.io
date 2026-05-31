@@ -1,4 +1,5 @@
 ---
+title: GitHub Actions basics
 ---
 
 

@@ -1,4 +1,5 @@
 ---
+title: Get directory size in Linux
 ---
 
 `du -sh file_path`

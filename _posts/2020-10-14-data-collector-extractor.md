@@ -1,4 +1,5 @@
 ---
+title: Data collector extractor
 ---
 
 Recently, I wrote a python script that allow you to collect and

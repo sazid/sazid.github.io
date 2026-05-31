@@ -1,4 +1,5 @@
 ---
+title: String hashing
 ---
 
 I've always wondered how c++ `std::map` works. Turns out its typically

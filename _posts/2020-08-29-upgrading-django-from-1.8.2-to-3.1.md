@@ -1,4 +1,5 @@
 ---
+title: Upgrading Django from 1.8.2 to 3.1
 ---
 
 At [Automation Solutionz](https://automationsolutionz.com), we've been

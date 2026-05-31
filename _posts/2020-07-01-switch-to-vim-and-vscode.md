@@ -1,4 +1,5 @@
 ---
+title: Switch to Vim and VS Code
 ---
 
 Well... I tried to use emacs, but I found myself ending up wasting
