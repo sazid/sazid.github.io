@@ -1,0 +1,635 @@
+---
+summary:
+  eyebrow: Projects
+  title: Project Timeline
+  intro: A timeline of notable systems projects, developer tools, Android apps, university work, and experiments.
+projects:
+- name: BitCode
+  period: 2026
+  stack: Go, LLM providers, terminal UI, agent tools
+  status: Active
+  links:
+  - label: GitHub
+    url: https://github.com/sazid/bitcode
+  summary: Terminal-first agentic coding CLI with an interactive TUI, single-shot mode, iterative tool calling, resumable sessions, subagents, context compaction, security guards, skills, reminders, and multi-provider LLM support.
+  details:
+  - Supports specialized subagents, conversation search, fork, rollback, rename, and resumable sessions scoped to the working directory.
+  - Includes multi-layer guards, language-aware guard skills, and an LLM guard agent for risky tool calls.
+  - Ships file, shell, web, todo, skill, compact, and agent tools alongside dynamic system and plugin reminders.
+  - Works with Anthropic, OpenAI, OpenRouter, OpenAI-compatible endpoints, multimodal inputs, and WebSocket streaming.
+  showcase:
+  - type: image
+    label: Terminal recording
+    src: https://asciinema.org/a/850426.svg
+    href: https://asciinema.org/a/850426
+    alt: BitCode terminal recording
+  - type: output
+    label: Install command
+    code: |
+      curl -fsSL https://raw.githubusercontent.com/sazid/bitcode/main/install.sh | sh
+- name: Redis-compatible Server
+  period: 2026
+  stack: Rust, mio, RESP, AOF
+  status: Active
+  links:
+  - label: GitHub
+    url: https://github.com/sazid/redis
+  summary: Rust Redis-style in-memory key-value server that speaks RESP2 and implements non-blocking TCP I/O, pipelining, binary-safe storage, TTL expiry, AOF persistence, memory accounting, and configurable eviction policies.
+  details:
+  - Supports PING, ECHO, SET, SET EX, GET, DEL, EXISTS, EXPIRE, TTL, and INFO over RESP-compatible TCP.
+  - Separates protocol parsing, command dispatch, storage, persistence, and the mio event loop for testable internals.
+  - Implements lazy and active expiry, AOF startup replay with fsync policy controls, and SIEVE-style second-chance eviction.
+  - Comparable-command benchmark on Apple M4 averages about 243k req/s, roughly matching Redis under the same no-pipeline local test profile.
+  - Test suite covers RESP parsing, commands, expiry, eviction, pipelining, memory accounting, and AOF replay.
+  showcase:
+  - type: output
+    label: Benchmark snapshot
+    code: |
+      Command   this req/s   Redis req/s   This/Redis   Delta
+      PING      230,947      238,095       0.97x        -3.0%
+      ECHO      245,700      238,663       1.03x        +2.9%
+      SET       244,499      241,546       1.01x        +1.2%
+      SET EX    244,499      243,309       1.00x        +0.5%
+      GET       244,499      239,234       1.02x        +2.2%
+      DEL       246,305      239,808       1.03x        +2.7%
+      EXISTS    246,305      240,964       1.02x        +2.2%
+      EXPIRE    245,098      242,718       1.01x        +1.0%
+      TTL       242,718      240,385       1.01x        +1.0%
+
+      Comparable average: 243,397 vs 240,525 req/s, 1.01x (+1.2%).
+- name: Lorust
+  period: 2024-2026
+  stack: Rust, Tokio, RustPython, TOML
+  status: Active
+  links:
+  - label: GitHub
+    url: https://github.com/sazid/lorust
+  summary: Rust HTTP load generator with direct CLI tests and TOML/JSON flow execution, rate or duration scheduling, thresholds, rich timing metrics, and RustPython-powered scripting between actions.
+  details:
+  - Supports request-count and duration modes, configurable rate, headers, body, method, timeout, redirect limits, and failed response body truncation.
+  - Thresholds can fail the process on error rate, p95 or p99 latency, or minimum RPS while still writing raw metrics.
+  - Flow files model virtual-user tasks with spawn-rate expressions, ordered HTTP steps, thresholds, variables, and scripting hooks.
+  - Outputs a human summary and sorted per-request JSON metrics including DNS, connect, TLS, start-transfer, elapsed, and redirect timings.
+  showcase:
+  - type: output
+    label: Load test output
+    code: |
+      === Load test complete ===
+      TOTAL TASKS: 100
+      PASSED: 100
+      FAILED: 0
+      === HTTP metric summary ===
+      REQUESTS: 100
+      HTTP 2XX: 100
+      ERROR RATE: 0.00%
+      REQUESTS/SEC: 9.98
+      P95 LATENCY MS: 75
+- name: Islamic Reflections
+  period: 2026
+  stack: Expo, React Native, TypeScript, Zig, static JSON
+  status: Released app
+  links:
+  - label: GitHub
+    url: https://github.com/sazid/islamic-reflections
+  - label: Play Store
+    url: https://play.google.com/store/apps/details?id=systems.ninetynine.ir
+  summary: Calm mobile, web, and terminal reflection app for short spiritually grounded reading moments throughout the day.
+  details:
+  - Delivers daily reflections organized by morning, midday, evening, and night, with a library for deeper study.
+  - Supports optional reminder notifications, content caching, theme controls, font size settings, and language preferences.
+  - Uses Arabic-friendly typography, multilingual content, Expo mobile builds, a Zig CLI, and static structured content data.
+  showcase:
+  - type: image
+    label: Daily reflection screen
+    src: https://play-lh.googleusercontent.com/tQ1fc_W7qMrFgHcpvMl3SlfIhXtwwvLHvGM9waXv7GrAIEVNIWphF2l0K1Hr8GnbBLJ5qVtJsIZ9MC5BnN9KDg=w1052-h592
+    href: https://play.google.com/store/apps/details?id=systems.ninetynine.ir
+    alt: Islamic Reflections daily reflection screen
+  - type: image
+    label: Library screen
+    src: https://play-lh.googleusercontent.com/b0ACHLDZKvZvDssUQqUlnBqBPr9usQUp22to3LcJ2Ojvh4o5qDL29EJs4pS-DxXMfNV0i32RF0XSLbMs-Zqwt44=w1052-h592
+    href: https://play.google.com/store/apps/details?id=systems.ninetynine.ir
+    alt: Islamic Reflections library screen
+  - type: image
+    label: Settings screen
+    src: https://play-lh.googleusercontent.com/3833F5cancut3AWDyG95ajwhjYvVf8A8NP61XyhQtmgIED5qO3y8o27QWGYtsM5hRe0e8BarRKTjBoKaL9ElLA=w1052-h592
+    href: https://play.google.com/store/apps/details?id=systems.ninetynine.ir
+    alt: Islamic Reflections settings screen
+- name: Conway Life
+  period: 2025
+  stack: Mojo, Python interop, pygame
+  status: Experiment
+  links:
+  - label: GitHub
+    url: https://github.com/sazid/conway-life
+  summary: Conway's Game of Life implemented in Mojo using pygame through Python interop.
+  details:
+  - Exercises Mojo and Python boundaries with a visual simulation loop.
+  showcase:
+  - type: image
+    label: Simulation demo
+    src: https://raw.githubusercontent.com/sazid/conway-life/HEAD/demo.gif
+    alt: Conway's Game of Life simulation
+- name: Fireflake
+  period: 2024
+  stack: Mojo
+  status: Experiment
+  links:
+  - label: GitHub
+    url: https://github.com/sazid/fireflake
+  summary: Snowflake-style ID generator implemented in Mojo.
+  details:
+  - Uses a compact systems problem to explore Mojo syntax and runtime behavior.
+  showcase:
+  - type: output
+    label: Generation example
+    code: |
+      from fireflake import Fireflake
+
+      fn main() raises:
+          fireflake = Fireflake()
+          new_id = fireflake.generate()
+          print(new_id)
+- name: Proglog
+  period: 2024
+  stack: Go, gRPC
+  status: Learning system
+  links:
+  - label: GitHub
+    url: https://github.com/sazid/proglog
+  summary: Distributed commit-log service modeled on Kafka internals, with gRPC APIs and append/read semantics.
+  details:
+  - Built to study storage, replication-oriented APIs, and log produce/consume behavior.
+  - Covers append/read semantics and storage behavior in a compact Go service.
+- name: Diary
+  period: 2023
+  stack: C#, ASP.NET MVC, Entity Framework, JavaScript
+  status: Archived
+  links:
+  - label: GitHub
+    url: https://github.com/sazid/Diary
+  summary: Journal/diary web app built with ASP.NET MVC 5 and Entity Framework 6.
+  details:
+  - Demonstrates earlier .NET web application work.
+- name: Do-it
+  period: 2023
+  stack: Java, Android
+  status: Public app code
+  links:
+  - label: GitHub
+    url: https://github.com/sazid/Do-it
+  summary: Minimal Android productivity app focused on getting tasks done with a simple interaction model.
+  details:
+  - Part of a long-running set of small Android productivity experiments.
+- name: Spell Check Bloom Filter
+  period: 2023
+  stack: Python, Bloom filter
+  status: Experiment
+  links:
+  - label: GitHub
+    url: https://github.com/sazid/spell-check-bloom-filter
+  summary: English spell checker implemented with a Bloom filter.
+  details:
+  - Small data-structure project focused on memory-efficient membership checks.
+  showcase:
+  - type: output
+    label: Dictionary check commands
+    code: |
+      $ python save_dictionary.py
+      $ python dictionary_test.py
+- name: ZeuZ GitHub Actions
+  period: 2023
+  stack: JavaScript, GitHub Actions
+  status: Product utility
+  links:
+  - label: Deploy preset
+    url: https://github.com/sazid/zeuz-actions-deploy-preset
+  - label: Upload attachment
+    url: https://github.com/sazid/zeuz-actions-upload-attachment
+  - label: Node availability
+    url: https://github.com/sazid/zeuz-actions-check-node-availability
+  summary: Small GitHub Actions for deployment presets, attachment upload, and checking node availability in ZeuZ workflows.
+  details:
+  - Useful as integration glue around CI/CD and test infrastructure.
+  showcase:
+  - type: output
+    label: Upload attachment action
+    code: |
+      uses: sazid/zeuz-actions-upload-attachment@v1.0
+      with:
+        zeuz_server_host: https://localhost
+        zeuz_api_key: ${{ secrets.ZEUZ_API_KEY }}
+        zeuz_attachment_type: global/test_case/step
+        zeuz_attachment_item_id: TEST-1234
+        zeuz_attachment_path: ./test.txt
+  - type: output
+    label: Node availability action
+    code: |
+      uses: sazid/zeuz-actions-check-node-availability@v1.1
+      with:
+        zeuz_server_host: https://localhost
+        zeuz_api_key: ${{ secrets.ZEUZ_API_KEY }}
+        zeuz_team_id: 2
+        zeuz_project_id: PROJ-17
+        node_id: your-node-id
+- name: Chat Server Nim
+  period: 2022
+  stack: Nim
+  status: Experiment
+  links:
+  - label: GitHub
+    url: https://github.com/sazid/chat-server-nim
+  summary: Chat server written in Nim.
+  details:
+  - Language exploration through a network service shape.
+- name: Distributed Services Lab
+  period: 2022
+  stack: Go, service communication
+  status: Learning system
+  links:
+  - label: GitHub
+    url: https://github.com/sazid/go-distributed-services
+  summary: Small distributed-systems exercises for exploring service-to-service communication and large-system mechanics.
+  details:
+  - Paired with gRPC and OpenTelemetry learning repositories from the same period.
+  showcase:
+  - type: output
+    label: Service startup commands
+    code: |
+      $ make all
+      $ ./bin/registryservice
+      $ ./bin/logservice
+      $ ./bin/gradingservice
+- name: Simplebank
+  period: 2022
+  stack: Go, Gin, SQLC, PostgreSQL, GitHub Actions
+  status: Learning system
+  links:
+  - label: GitHub
+    url: https://github.com/sazid/simplebank
+  summary: Transaction service built to learn database ACID behavior, SQLC, token-based authentication, API structure, and CI automation.
+  details:
+  - Focused on practical backend service patterns rather than framework demos.
+- name: ZeuZ Node Auto
+  period: 2022
+  stack: Go, Python
+  status: Product utility
+  links:
+  - label: GitHub
+    url: https://github.com/sazid/zeuz_node
+  summary: Single-binary ZeuZ Node installer/runner that embeds Python for machines without a runtime and handles automatic minor/patch updates.
+  details:
+  - Designed to reduce setup friction for remote test node machines.
+- name: Mini Redis
+  period: 2021
+  stack: Rust, Tokio
+  status: Learning system
+  links:
+  - label: GitHub
+    url: https://github.com/sazid/mini-redis-rs
+  summary: Partial Redis server implementation focused on the basic protocol and GET/SET commands.
+  details:
+  - Served as the smaller learning precursor to the later Rust Redis-compatible server.
+  showcase:
+  - type: output
+    label: Server and client commands
+    code: |
+      cargo run --bin server
+      cargo run --bin client
+- name: Node Manager
+  period: 2021
+  stack: Go
+  status: Product utility
+  links:
+  - label: GitHub
+    url: https://github.com/sazid/node_manager
+  summary: Utility for automatically managing ZeuZ node instances and external service reporting.
+  details:
+  - Built around operational reliability for remote automation nodes.
+  showcase:
+  - type: image
+    label: Node manager screen
+    src: https://raw.githubusercontent.com/sazid/node_manager/HEAD/docs/node_manager.png
+    alt: Node manager screen
+  - type: image
+    label: Node state flowchart
+    src: https://raw.githubusercontent.com/sazid/node_manager/HEAD/docs/node_state_decision_flowchart.png
+    alt: Node state decision flowchart
+  - type: output
+    label: Scaling decision sketch
+    code: |
+      active = inprogress + idle
+
+      IF active < min nodes THEN
+          start (min - active) nodes
+      ELSE IF active == inprogress AND active+1 <= max allowed nodes THEN
+          start 1 more node
+      ELSE IF idle > 1 AND active > min nodes THEN
+          kill (idle - 1) nodes
+- name: Rich Editor
+  period: 2021
+  stack: C#, .NET Framework
+  status: Public desktop code
+  links:
+  - label: GitHub
+    url: https://github.com/sazid/rich-editor
+  summary: Simple rich text editor for Windows built on the .NET Framework.
+  details:
+  - Small desktop UI project from the C#/.NET period.
+  showcase:
+  - type: image
+    label: Login screen
+    src: https://raw.githubusercontent.com/sazid/rich-editor/HEAD/img/login.png
+    alt: Rich Editor login screen
+  - type: image
+    label: Editor screen
+    src: https://raw.githubusercontent.com/sazid/rich-editor/HEAD/img/editor.png
+    alt: Rich Editor editor screen
+  - type: image
+    label: Menu screen
+    src: https://raw.githubusercontent.com/sazid/rich-editor/HEAD/img/menu.png
+    alt: Rich Editor menu screen
+- name: Bank Management System
+  period: 2021-2025
+  stack: Java, JavaFX, Swing, MariaDB
+  status: University project
+  links:
+  - label: GitHub
+    url: https://github.com/sazid/bank-management-system
+  summary: Desktop app for a bank management system built for a university Java course.
+  details:
+  - Covers account, transaction, and administration flows across Java desktop UI patterns.
+  showcase:
+  - type: image
+    label: Bank management screen 1
+    src: https://raw.githubusercontent.com/sazid/bank-management-system/HEAD/images/1.png
+    alt: Bank Management System screen 1
+  - type: image
+    label: Bank management screen 2
+    src: https://raw.githubusercontent.com/sazid/bank-management-system/HEAD/images/2.png
+    alt: Bank Management System screen 2
+  - type: image
+    label: Bank management screen 3
+    src: https://raw.githubusercontent.com/sazid/bank-management-system/HEAD/images/3.png
+    alt: Bank Management System screen 3
+- name: Exam Management System
+  period: 2021-2023
+  stack: Vue, Python
+  status: Archived/learning
+  links:
+  - label: Vue version
+    url: https://github.com/sazid/ems
+  - label: Python version
+    url: https://github.com/sazid/ems2
+  summary: Exam management system explored through separate frontend and Python implementations.
+  details:
+  - Covers CRUD workflows and product-style admin screens across two implementations.
+  showcase:
+  - type: image
+    label: Demo video thumbnail
+    src: https://img.youtube.com/vi/KIqVNJRba_Y/0.jpg
+    href: https://www.youtube.com/watch?v=KIqVNJRba_Y
+    alt: Exam Management System demo video
+- name: Floater
+  period: 2021-2023
+  stack: C#, WPF, CefSharp
+  status: University project
+  links:
+  - label: GitHub
+    url: https://github.com/sazid/Floater
+  summary: Floating opaque Chromium-based browser for Windows, built with .NET and WPF.
+  details:
+  - Explores always-available browser workflows on Windows.
+  showcase:
+  - type: image
+    label: Floating browser screen 1
+    src: https://raw.githubusercontent.com/sazid/Floater/HEAD/screenshots/1.jpg
+    alt: Floater screenshot 1
+  - type: image
+    label: Floating browser screen 2
+    src: https://raw.githubusercontent.com/sazid/Floater/HEAD/screenshots/2.png
+    alt: Floater screenshot 2
+  - type: image
+    label: Floating browser screen 3
+    src: https://raw.githubusercontent.com/sazid/Floater/HEAD/screenshots/3.png
+    alt: Floater screenshot 3
+- name: GoWiki
+  period: 2020
+  stack: Go, file-system storage
+  status: Learning project
+  links:
+  - label: GitHub
+    url: https://github.com/sazid/gowiki
+  summary: Simple file-system-backed wiki written in Go.
+  details:
+  - Compact exercise in Go HTTP handling and persistence.
+- name: SingleNote
+  period: 2020
+  stack: Java, Android
+  status: Public app code
+  links:
+  - label: GitHub
+    url: https://github.com/sazid/SingleNote
+  summary: Simple note-taking app for Android.
+  details:
+  - Complements the launcher/productivity app experiments from the same Android period.
+- name: Texxty
+  period: 2020
+  stack: C#, React, SQL Server
+  status: University project
+  links:
+  - label: Backend
+    url: https://github.com/sazid/texxty
+  - label: Frontend
+    url: https://github.com/sazid/texxty-frontend
+  summary: Minimal blogging system focused on text-first publishing.
+  details:
+  - Split across backend and frontend repositories.
+- name: WebDriver Updater
+  period: 2020
+  stack: Python
+  status: Utility
+  links:
+  - label: GitHub
+    url: https://github.com/sazid/webdriver-updater
+  summary: Utility that automatically downloads and updates available web drivers.
+  details:
+  - Automates browser-driver maintenance for Selenium-style test environments.
+- name: AIUBian
+  period: 2020-2024
+  stack: Java, Kotlin, Jsoup, Android SDK
+  status: Released app
+  links:
+  - label: GitHub
+    url: https://github.com/sazid/aiub-app
+  summary: Android app for AIUB student portal access, notice board, portal notifications, academic calendars, and related campus workflows.
+  details:
+  - Reached 1k+ installs and a consistent user base.
+  - Used a hidden WebView flow to navigate portal pages and collect notification data while handling short-lived sessions.
+  showcase:
+  - type: image
+    label: App screen 1
+    src: https://raw.githubusercontent.com/sazid/aiub-app/HEAD/images/1.jpg
+    alt: AIUBian app screen 1
+  - type: image
+    label: App screen 2
+    src: https://raw.githubusercontent.com/sazid/aiub-app/HEAD/images/2.jpg
+    alt: AIUBian app screen 2
+  - type: image
+    label: Activity analytics
+    src: https://raw.githubusercontent.com/sazid/aiub-app/HEAD/screenshots/analytics/activity-over-time.png
+    alt: AIUBian activity analytics
+- name: Arduino RC Car
+  period: 2019
+  stack: C++, Arduino Uno, HC-05 Bluetooth, Adafruit Motor Shield
+  status: Hardware experiment
+  links:
+  - label: GitHub
+    url: https://github.com/sazid/ArduinoRCcar
+  summary: Arduino RC car control code using Bluetooth and a motor driver.
+  details:
+  - Hardware-oriented project outside the usual backend/mobile track.
+  showcase:
+  - type: image
+    label: Motor wiring diagram
+    src: https://raw.githubusercontent.com/sazid/ArduinoRCcar/HEAD/motor_diagram.jpg
+    alt: Arduino RC car motor wiring diagram
+- name: Beginning of War
+  period: 2019
+  stack: C++, OpenGL
+  status: Game experiment
+  links:
+  - label: GitHub
+    url: https://github.com/sazid/beginning-of-war
+  summary: 2D game written in C++ and OpenGL.
+  details:
+  - Related to the OpenGL code experiments from the same period.
+- name: Unlockify
+  period: 2018
+  stack: Kotlin, Android
+  status: Released app
+  links:
+  - label: GitHub
+    url: https://github.com/sazid/Unlockify
+  - label: Play Store
+    url: https://play.google.com/store/apps/details?id=com.mohammedsazid.unlockify
+  summary: Android reminder app that shows anything you write into it every time you unlock your device.
+  details:
+  - Built around unlock-triggered reminders for lightweight recurring prompts.
+  - Designed as a small utility with a direct input-and-remind interaction model.
+  showcase:
+  - type: image
+    label: Reminder screen
+    src: https://play-lh.googleusercontent.com/3x4ciNxwiQe6CPlgM7Vr5RI6GQHOZ2z0bLmBcsPiDp3rdCzrs4iMEJy6AMeZwJk_05Ln=w1052-h592
+    href: https://play.google.com/store/apps/details?id=com.mohammedsazid.unlockify
+    alt: Unlockify reminder screen
+  - type: image
+    label: Unlock reminder flow
+    src: https://play-lh.googleusercontent.com/uCPJdzGp1xuEfYq3EiybaMNFJMnJsnya_8HgB1Xb6xFQvlw_Rm1xXiO5c6L-WlyWjww=w1052-h592
+    href: https://play.google.com/store/apps/details?id=com.mohammedsazid.unlockify
+    alt: Unlockify unlock reminder flow
+  - type: image
+    label: Reminder settings
+    src: https://play-lh.googleusercontent.com/9suJEKcBYkp_v0irBlVbeXzi5IxnzN6vz_dRKsy3gv5fko86zxE02f8_TpxNuPQtrXWB=w1052-h592
+    href: https://play.google.com/store/apps/details?id=com.mohammedsazid.unlockify
+    alt: Unlockify reminder settings
+- name: Locker
+  period: 2018
+  stack: Java, Android, device admin
+  status: Released app
+  links:
+  - label: GitHub
+    url: https://github.com/sazid/locker
+  - label: Play Store
+    url: https://play.google.com/store/apps/details?id=com.mohammedsazid.android.locker
+  summary: Android focus utility that locks the device for a chosen timer so work or study sessions stay distraction-free.
+  details:
+  - Uses a simple timer-and-lock flow while still allowing incoming calls.
+  - Handles the device-admin lifecycle needed for locking and uninstalling the app.
+  showcase:
+  - type: image
+    label: Lock timer screen
+    src: https://play-lh.googleusercontent.com/hIjPh1bsJ-aw_vtNMRX29Ts3A9LegH-SPeG2s7aOeAMnpsrq7nBbGrUPmyor0GOwUw=w1052-h592
+    href: https://play.google.com/store/apps/details?id=com.mohammedsazid.android.locker
+    alt: Locker lock timer screen
+  - type: image
+    label: Active lock screen
+    src: https://play-lh.googleusercontent.com/pPpDO2Zh6WApOtzu18xxZ_zz4ixfSjdlRChslZS-3coxWsqkya5Kz01cVYsEkIxJ_rE=w1052-h592
+    href: https://play.google.com/store/apps/details?id=com.mohammedsazid.android.locker
+    alt: Locker active lock screen
+- name: Listr / Done
+  period: 2016
+  stack: Java, Android
+  status: Public app code
+  links:
+  - label: Listr
+    url: https://github.com/sazid/Listr
+  - label: Done
+    url: https://github.com/sazid/Done
+  summary: Minimal checklist and productivity apps from the early Android project set.
+  details:
+  - Useful as early examples of small, focused mobile UI work.
+- name: SimpleJavaGDF and LoneBall
+  period: 2016
+  stack: Java, game framework
+  status: Game experiment
+  links:
+  - label: SimpleJavaGDF
+    url: https://github.com/sazid/SimpleJavaGDF
+  - label: LoneBall
+    url: https://github.com/sazid/LoneBall
+  summary: A small Java game development framework and a Pong-style game built on top of it.
+  details:
+  - Early project pairing a reusable framework with a playable sample.
+- name: Browse
+  period: 2016-2026
+  stack: Java, Android WebView
+  status: Public app code
+  links:
+  - label: GitHub
+    url: https://github.com/sazid/Browse
+  - label: Play Store
+    url: https://play.google.com/store/apps/details?id=com.mohammedsazid.android.browse
+  summary: Fast, simple, lightweight Android browser built on Android WebView.
+  details:
+  - Focused on fast startup and a lightweight browsing surface around Android WebView.
+  - Published as an open source Android browser with no history, a tab-less multi-page model, and a simple minimal UI.
+  showcase:
+  - type: image
+    label: Browser screen 1
+    src: https://play-lh.googleusercontent.com/2t0Xfc2xW5X2urKJUKCombkHpSfYDL5Qiqajc1_uULLhaJeSmDzILBR38l1MWHy19w=w1052-h592
+    href: https://play.google.com/store/apps/details?id=com.mohammedsazid.android.browse
+    alt: Browse app screen 1
+  - type: image
+    label: Browser screen 2
+    src: https://play-lh.googleusercontent.com/7cLBpzd8wHPO8moZIoHIfAdnj6p3i2KbwY3_cHNnR_EipzqdqB6SYq_J3HghetPurnk=w1052-h592
+    href: https://play.google.com/store/apps/details?id=com.mohammedsazid.android.browse
+    alt: Browse app screen 2
+  - type: image
+    label: Browser screen 3
+    src: https://play-lh.googleusercontent.com/besCLEEKENSjQBfbl68eyuJ3SGzJg3Eo41GInIck6tW7CiYoUAW576jYJ7MFJd69vlvP=w1052-h592
+    href: https://play.google.com/store/apps/details?id=com.mohammedsazid.android.browse
+    alt: Browse app screen 3
+- name: Explore Launcher / Launsz
+  period: 2015-2017
+  stack: Java, Kotlin, SQLite, XML, Android SDK
+  status: Released app
+  links:
+  - label: GitHub
+    url: https://github.com/sazid/Launsz
+  - label: Screenshots
+    url: https://drive.google.com/drive/folders/14pIsLjYUr8lO2Aj0AhAlch0WF6uq3JPe?usp=drive_link
+  summary: Android launcher with app launching, widget support, contacts, icon-pack support, notes, and a productivity-oriented home screen.
+  details:
+  - Reduced memory usage from roughly 150 MB to 50 MB through image processing and display optimization.
+  - Used background threading for jitter-free UI and shipped quick fixes through a rapid release cycle.
+  - Reached a dedicated user base with regular feedback from active users.
+- name: Real-time Collaborative Tool
+  period: 2015
+  stack: CSS, web realtime concepts
+  status: Early experiment
+  links:
+  - label: GitHub
+    url: https://github.com/sazid/Real-time-Collaborative-tool
+  summary: Early real-time collaborative tool experiment.
+  details:
+  - Explores synchronized edits and shared realtime workspace behavior.
