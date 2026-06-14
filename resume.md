@@ -74,6 +74,15 @@ description: Public CV for Mohammed Sazid Al Rashid.
   </section>
 
   <section class="cv-section">
+    <h2>Open Source Contributions</h2>
+    <ul class="cv-oss-list">
+      {% for item in resume.open_source %}
+      <li>{{ item.project }}: <a href="{{ item.url }}">{{ item.label }}</a></li>
+      {% endfor %}
+    </ul>
+  </section>
+
+  <section class="cv-section">
     <h2>Education</h2>
     {% for item in resume.education %}
     <section class="cv-entry">

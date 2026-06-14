@@ -35,7 +35,7 @@ experience:
     period: Mar 2023 - present
     highlights:
       - Cut down costs by engineering a scalable test deployment architecture, achieving 93% CPU reduction and 4000+ daily deployments through Redis-based distributed queuing.
-      - Architected and launched ZeuZ's AI-powered Codebase Analyzer microservice, enabling repository analysis, artifact scanning, agentic implementation, and multi-provider LLM orchestration across Claude Agent SDK, OpenAI Codex SDK, and OpenCode.
+      - Architected and launched ZeuZ's AI-powered Codebase Analyzer microservice that turns repository analysis and artifact scanning into automated, human-reviewed implementation, orchestrating multiple LLM backends (Claude Agent SDK, OpenAI Codex SDK, OpenCode) behind a single service.
       - Built agentic development workflows with worktree isolation, human-in-the-loop feedback, diff/commit review, PR creation, persona-based AI review, and apply/reject/continue flows for developer productivity.
       - Productionized AI services with Docker/GHCR CI builds, analyzer service routing in Docker Compose, base-branch selection, AI Jobs administration, SQL migrations, structured logging, and OpenTelemetry tracing.
       - Spearheading the idea, planning, and team-led development of an S3-compatible object storage migration away from single-host disk storage, guiding the move toward shared uploads and preparing ZeuZ for horizontal scaling and k3s/Kubernetes multi-machine deployments.
@@ -46,7 +46,7 @@ experience:
     location: Remote, Canada
     period: Sept 2020 - Mar 2023
     highlights:
-      - Transformed monolithic system into microservices architecture and reduced deployment times by 75% through Docker containerization and parallel deployment strategies.
+      - Transformed monolithic system into microservices architecture and reduced deployment times by 75% (from 2-4h installs/upgrades to 10m) through Docker containerization and parallel deployment strategies.
       - Engineered real-time performance monitoring using BigQuery and Looker Studio for a major telecom client.
       - Implemented the platform's first authentication layer and real-time log streaming system using Rust/WebSocket.
 
@@ -55,7 +55,7 @@ experience:
     location: Remote, Canada
     period: Jan 2017 - Sept 2020
     highlights:
-      - Reduced frontend load size by 78% and cut report/log processing time by 90% for 500+ test cases through resource optimization and batch processing.
+      - Reduced frontend load size by 78% and cut report/log processing time by 90% (from 8 hours to 45 minutes) for 500+ test cases through resource optimization and batch processing.
       - Upgraded Django from 1.8.2 to 3.1, resolving 100+ vulnerabilities in one day.
 
 projects:
@@ -99,6 +99,25 @@ projects:
       url: https://app.codecrafters.io/
     highlights:
       - Side project implementing POSIX shell stages with builtin/external command execution, PATH lookup, cd support, and per-command arena allocation.
+
+  - name: AIUBian
+    stack: Java, Kotlin, Jsoup, Android SDK
+    link:
+      label: github/aiub-app
+      url: https://github.com/sazid/aiub-app
+    highlights:
+      - Shipped an Android app for the AIUB student portal (notices, portal notifications, academic calendars) to 1k+ installs with a consistent user base.
+
+open_source:
+  - project: actix/actix-web
+    label: "#1920 Add WsResponseBuilder to build web socket session response"
+    url: https://github.com/actix/actix-web/pull/1920
+  - project: rust-lang/rustlings
+    label: '#572 Add "collections" exercises'
+    url: https://github.com/rust-lang/rustlings/pull/572
+  - project: cerbos/cerbos
+    label: "#2429 Update outdated docs"
+    url: https://github.com/cerbos/cerbos/pull/2429
 
 education:
   - institution: American International University Bangladesh
