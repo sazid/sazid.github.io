@@ -1,453 +1,239 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,600&display=swap');
+
 @font-face {
     font-family: 'JetBrains Mono';
     src: url('/assets/fonts/JetBrainsMono-Regular.woff2') format('woff2');
+    font-display: swap;
 }
 
-$fontSize: 16px;
-$codeColor: #f0f0f0;
+$body: 'Source Serif 4', Charter, 'Bitstream Charter', 'Iowan Old Style', Georgia, serif;
+$mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+$text: #1b1b1b;
+$muted: #5e5e5e;
+$rule: #e2e2e2;
+$codeColor: #f4f4f4;
 
 body {
-    max-width: 70ch;
-    font-family: 'JetBrains Mono', 'Roboto Mono', monospace;
-    font-size: $fontSize;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 16px;
-    margin-bottom: 16px;
+    max-width: 42rem;
+    margin: 40px auto 96px;
+    padding: 0 20px;
+    font-family: $body;
+    font-size: 18px;
+    line-height: 1.65;
+    color: $text;
     text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+    font-weight: 600;
+    line-height: 1.25;
+}
+
+h1 {
+    margin: 0 0 20px;
+    font-size: 34px;
+    letter-spacing: -0.01em;
+}
+
+h2 {
+    margin: 44px 0 14px;
+    font-size: 25px;
+}
+
+h3 {
+    margin: 30px 0 6px;
+    font-size: 20px;
+}
+
+p {
+    margin: 0 0 18px;
+}
+
+ul,
+ol {
+    padding-left: 22px;
+}
+
+li + li {
+    margin-top: 6px;
 }
 
 img {
     display: block;
-    max-width: 70ch;
-    margin-left: auto;
-    margin-right: auto;
+    max-width: 100%;
+    margin: 0 auto;
 }
 
 a {
-    text-decoration: none;
     color: #0045e4;
+    text-decoration: none;
 }
 
 a:hover {
     text-decoration: underline;
 }
 
-.post-list {
-    line-height: 48px;
-}
-
-.resume-page {
-    width: min(960px, calc(100vw - 32px));
-    margin-left: 50%;
-    transform: translateX(-50%);
-}
-
-.resume-embed {
-    width: 100%;
-    min-height: 720px;
-    height: calc(100vh - 180px);
-    border: 1px solid #d8d8d8;
-}
-
-.cv-page {
-    width: min(980px, calc(100vw - 32px));
-    margin-left: 50%;
-    transform: translateX(-50%);
-    padding-bottom: 56px;
-    color: #171717;
-    line-height: 1.55;
-}
-
-.cv-header {
-    padding: 28px 0 24px;
-    margin-bottom: 34px;
-    border-bottom: 2px solid #171717;
-}
-
-.cv-label {
-    margin: 0 0 10px;
-    color: #7a1f3d;
-    font-size: 13px;
-    font-weight: 700;
-    text-transform: uppercase;
-}
-
-.cv-header h1 {
-    margin: 0 0 14px;
-    font-size: 42px;
-    line-height: 1.08;
-}
-
-.cv-meta {
+nav {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px 18px;
+    gap: 4px 18px;
+    margin-bottom: 48px;
+    font-family: $mono;
+    font-size: 14px;
+}
+
+.non-current {
+    color: $muted;
+}
+
+.current {
+    color: $text;
+    text-decoration: underline;
+}
+
+.post-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 16px;
+    padding: 7px 0;
+}
+
+.post-list span {
+    color: $muted;
+    font-family: $mono;
+    font-size: 14px;
+}
+
+code {
+    font-family: $mono !important;
+    font-size: 0.86em !important;
+    background-color: $codeColor !important;
+}
+
+pre.highlight {
+    padding: 12px 14px;
+    overflow-x: auto;
+    background-color: $codeColor !important;
+}
+
+// Shared bits for the CV and Projects pages.
+
+.meta {
+    color: $muted;
+    font-family: $mono;
+    font-size: 14px;
+}
+
+.inline-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2px 16px;
     padding: 0;
     margin: 0;
     list-style: none;
-    color: #3d3d3d;
 }
 
-.cv-meta li {
-    white-space: nowrap;
+.inline-list li + li {
+    margin-top: 0;
 }
 
-.cv-download {
-    margin: 22px 0 0;
+.entry {
+    margin-top: 26px;
 }
 
-.cv-download a {
-    display: inline-block;
-    padding: 8px 12px;
-    border: 1px solid #171717;
-    color: #171717;
-    background: #f4f4f4;
-}
-
-.cv-download a:hover {
-    background: #171717;
-    color: #ffffff;
-    text-decoration: none;
-}
-
-.cv-section {
-    margin-top: 36px;
-}
-
-.cv-section h2 {
-    padding-bottom: 8px;
-    margin: 0 0 16px;
-    border-bottom: 1px solid #c9c9c9;
-    color: #7a1f3d;
-    font-size: 20px;
-}
-
-.cv-skill-list {
+.entry h3 {
     margin: 0;
 }
 
-.cv-skill-list div {
-    display: grid;
-    grid-template-columns: 220px minmax(0, 1fr);
-    gap: 16px;
-    padding: 12px 0;
-    border-top: 1px solid #e4e4e4;
+.entry .meta {
+    margin: 2px 0 8px;
 }
 
-.cv-skill-list div:first-child {
-    border-top: 0;
-}
-
-.cv-skill-list dt {
-    font-weight: 700;
-}
-
-.cv-skill-list dd {
+.entry ul {
     margin: 0;
 }
 
-.cv-entry {
-    padding: 18px 0 20px;
-    border-top: 1px solid #e4e4e4;
+// Projects page.
+
+.project {
+    margin-top: 34px;
 }
 
-.cv-entry:first-of-type {
-    border-top: 0;
-    padding-top: 0;
-}
-
-.cv-entry-heading {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(220px, 0.72fr);
-    gap: 16px;
-    align-items: baseline;
-}
-
-.cv-entry-heading h3 {
+.project h2 {
     margin: 0;
-    font-size: 18px;
+    font-size: 21px;
 }
 
-.cv-entry-heading p {
-    margin: 0;
-    color: #4d4d4d;
-    text-align: right;
+.project .meta {
+    margin: 2px 0 10px;
 }
 
-.cv-period {
-    margin: 4px 0 10px;
-    color: #6a6a6a;
-}
-
-.cv-entry ul {
-    padding-left: 22px;
+.project ul {
     margin: 0;
 }
 
-.cv-entry li + li {
-    margin-top: 8px;
-}
-
-.projects-page {
-    width: min(920px, calc(100vw - 32px));
-    margin-left: 50%;
-    transform: translateX(-50%);
-    padding-bottom: 56px;
-    color: #171717;
-    line-height: 1.58;
-}
-
-.projects-header {
-    padding: 24px 0 20px;
-    margin-bottom: 24px;
-    border-bottom: 1px solid #d9d9d9;
-}
-
-.projects-label {
-    margin: 0 0 8px;
-    color: #7a1f3d;
-    font-size: 13px;
-    font-weight: 700;
-    text-transform: uppercase;
-}
-
-.projects-header h1 {
-    margin: 0 0 12px;
-    font-size: 36px;
-    line-height: 1.12;
-}
-
-.projects-intro {
-    max-width: 72ch;
-    margin: 0;
-    color: #303030;
-}
-
-.project-timeline {
-    position: relative;
-    padding: 4px 0 0 0;
-    margin: 0;
-    list-style: none;
-}
-
-.project-timeline::before {
-    content: "";
-    position: absolute;
-    top: 12px;
-    bottom: 0;
-    left: 116px;
-    width: 1px;
-    background: #ececec;
-}
-
-.project-event {
-    position: relative;
-    display: grid;
-    grid-template-columns: 96px minmax(0, 1fr);
-    gap: 40px;
-    padding: 0 0 26px;
-}
-
-.project-event::before {
-    content: "";
-    position: absolute;
-    top: 7px;
-    left: 113px;
-    width: 7px;
-    height: 7px;
-    background: #7a1f3d;
-}
-
-.project-event time {
-    color: #666666;
-    font-size: 13px;
-    font-weight: 700;
-    line-height: 1.4;
-    text-align: right;
-}
-
-.project-item {
-    padding-bottom: 24px;
-    border-bottom: 1px solid #eeeeee;
-}
-
-.project-item-heading {
-    display: grid;
-    grid-template-columns: minmax(0, 0.92fr) minmax(220px, 1fr);
-    gap: 16px;
-    align-items: baseline;
-}
-
-.project-item-heading h2 {
-    margin: 0;
-    font-size: 17px;
-}
-
-.project-item-heading p {
-    margin: 0;
-    color: #555555;
-    font-size: 14px;
-    text-align: right;
-}
-
-.project-status {
-    margin: 6px 0 0;
-    color: #6a6a6a;
+.project-links {
+    margin-top: 10px;
+    font-family: $mono;
     font-size: 14px;
 }
 
-.project-summary {
-    margin: 9px 0 0;
+.project-links a + a {
+    margin-left: 16px;
 }
 
-.project-details {
-    padding-left: 18px;
-    margin: 10px 0 0;
-}
-
-.project-details li + li {
-    margin-top: 5px;
-}
-
-.project-showcase {
+.showcase {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 12px;
-    margin-top: 14px;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 14px;
+    margin-top: 16px;
 }
 
-.project-showcase-item {
+.showcase figure {
     min-width: 0;
     margin: 0;
 }
 
-.project-showcase img {
-    display: block;
+.showcase img {
     width: 100%;
-    max-width: 100%;
-    max-height: 240px;
-    margin: 0;
-    border: 1px solid #e6e6e6;
-    background: #fafafa;
+    max-height: 260px;
+    border: 1px solid $rule;
     object-fit: contain;
 }
 
-.project-showcase figcaption {
+.showcase figcaption {
     margin-top: 5px;
-    color: #666666;
+    color: $muted;
+    font-family: $mono;
     font-size: 13px;
 }
 
-.project-showcase-output {
+.showcase pre {
+    margin: 0;
+    padding: 12px 14px;
+    overflow-x: auto;
+    background: $codeColor;
+    line-height: 1.5;
+}
+
+.showcase-output {
     grid-column: 1 / -1;
 }
 
-.project-showcase-output pre {
-    margin: 0;
-    padding: 10px 12px;
-    overflow-x: auto;
-    border: 1px solid #e6e6e6;
-    background: #f7f7f7;
-    font-size: 13px;
-    line-height: 1.45;
-}
-
-.project-showcase-output code {
-    background: transparent !important;
-    font-size: 13px !important;
-}
-
-.project-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    margin-top: 10px;
-}
-
-.project-links a {
-    color: #0045e4;
-    font-size: 13px;
-    font-weight: 700;
-}
-
-.project-links a:hover {
-    text-decoration: underline;
-}
-
-pre.highlight {
-    padding: 8px;
-    background-color: $codeColor !important;
-}
-
-code {
-    font-family: 'JetBrains Mono', 'Roboto Mono', monospace !important;
-    font-size: $fontSize !important;
-    background-color: $codeColor !important;
-}
-
-.non-current {
-    color: #565656;
-}
-
-.current {
-    text-decoration: underline;
-}
-
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 640px) {
     body {
-        max-width: 100%;
-        margin: 16px;
+        margin-top: 28px;
+        font-size: 17px;
     }
 
-    .cv-header h1 {
-        font-size: 30px;
+    h1 {
+        font-size: 28px;
     }
 
-    .cv-meta li {
-        white-space: normal;
-    }
-
-    .cv-skill-list div,
-    .cv-entry-heading {
-        display: block;
-    }
-
-    .cv-entry-heading p {
-        margin-top: 4px;
-        text-align: left;
-    }
-
-    .projects-header h1 {
-        font-size: 30px;
-    }
-
-    .project-timeline::before {
-        left: 3px;
-    }
-
-    .project-event {
-        display: block;
-        padding-left: 22px;
-    }
-
-    .project-event::before {
-        left: 0;
-    }
-
-    .project-event time {
-        display: block;
-        margin-bottom: 8px;
-        text-align: left;
-    }
-
-    .project-item-heading {
-        display: block;
-    }
-
-    .project-item-heading p {
-        margin-top: 4px;
-        text-align: left;
+    h2 {
+        font-size: 22px;
     }
 }
