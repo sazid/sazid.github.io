@@ -6,9 +6,7 @@ description: ninetynine.systems is my software studio. It makes Gatekeeper, an a
 
 # ninetynine.systems
 
-[ninetynine.systems](https://ninetynine.systems) is my software studio. Most of
-what I build there is about AI agents doing real work, and the plumbing you need
-before you can trust them with it.
+[ninetynine.systems](https://ninetynine.systems) is my software studio.
 
 ## Gatekeeper
 
