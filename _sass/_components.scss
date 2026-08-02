@@ -125,6 +125,15 @@
   white-space: nowrap;
 }
 
+// ── Post ────────────────────────────────────────────────────────────────────
+
+.post-meta {
+  margin: 0 0 var(--space-6);
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: var(--size-small);
+}
+
 // ── Responsive ──────────────────────────────────────────────────────────────
 // One breakpoint for the whole site.
 
