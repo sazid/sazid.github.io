@@ -1,0 +1,50 @@
+// ── Navigation bar ──────────────────────────────────────────────────────────
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  justify-content: space-between;
+  align-items: baseline;
+  padding: var(--space-3) 0;
+  border-bottom: 2px solid var(--border-strong);
+}
+
+.nav-label {
+  margin: 0;
+  font-weight: 700;
+}
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav-links li + li { margin-top: 0; }
+
+// Current page is bold and not a link. Never signalled by colour alone.
+.nav-current { font-weight: 700; }
+
+// ── Footer ──────────────────────────────────────────────────────────────────
+
+.footer {
+  margin-top: var(--space-6);
+  padding: var(--space-4) 0;
+  border-top: var(--rule) solid var(--border);
+  color: var(--muted);
+  font-size: var(--size-small);
+}
+
+.footer p { margin: 0; }
+
+// ── Responsive ──────────────────────────────────────────────────────────────
+// One breakpoint for the whole site.
+
+@media (max-width: 700px) {
+  .nav { display: block; }
+  .nav-label { margin-bottom: var(--space-2); }
+}

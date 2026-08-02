@@ -10,8 +10,14 @@
 </head>
 
 <body>
-  {% include navigation.html %}
-  {{ content }}
+  <a class="skip-link" href="#content">Skip to content</a>
+  <div class="shell">
+    {% include navigation.html %}
+    <main id="content" tabindex="-1">
+      {{ content }}
+    </main>
+    {% include footer.html %}
+  </div>
 </body>
 
 </html>
