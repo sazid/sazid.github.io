@@ -1,0 +1,27 @@
+name: Mohammed Sazid Al Rashid
+
+identity:
+  - label: Name
+    value: Mohammed Sazid Al Rashid
+  - label: Occupation
+    value: Technical Lead at Automation Solutionz
+  - label: Location
+    value: Dhaka, Bangladesh
+  - label: Focus
+    value: Systems engineering, agentic AI, developer tooling
+  - label: Education
+    value: BSc in Computer Science and Software Engineering, American International University Bangladesh
+
+contact:
+  - label: Email
+    text: sazidozon@gmail.com
+    url: mailto:sazidozon@gmail.com
+  - label: GitHub
+    text: sazid
+    url: https://github.com/sazid
+  - label: LinkedIn
+    text: sazidz
+    url: https://www.linkedin.com/in/sazidz/
+  - label: Stack Overflow
+    text: sazid
+    url: https://stackoverflow.com/users/1941132/sazid

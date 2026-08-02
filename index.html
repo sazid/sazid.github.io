@@ -3,19 +3,60 @@ layout: default
 title: Home
 ---
 
-<h1>Sazid</h1>
+{% assign profile = site.data.profile %}
 
-<p>
-    Random thoughts and stuffs that piqued my interest. These are mostly a
-    collection of things I either want others to know or they're here for
-    self-documenting purpose for my future reference.
-</p>
+<h1>{{ profile.name }}</h1>
 
-<div>
-    {% for post in site.posts %}
-    <div class="post-list">
-        <span>{{ post.date | date_to_string }}</span>
-        <a href="{{ post.url }}">{{ post.title }}</a>
-    </div>
-    {% endfor %}
+<h2 class="section-label">About</h2>
+
+<div class="sheet-grid">
+  <div class="sheet-wrap" tabindex="0" role="region" aria-label="Personal information">
+    <table class="sheet sheet--rows">
+      <caption class="sheet-title">Personal information</caption>
+      <tbody>
+        {% for row in profile.identity %}
+        <tr>
+          <th scope="row">{{ row.label }}</th>
+          <td>{{ row.value }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+  <div class="sheet-wrap" tabindex="0" role="region" aria-label="Contact">
+    <table class="sheet sheet--rows">
+      <caption class="sheet-title">Contact</caption>
+      <tbody>
+        {% for row in profile.contact %}
+        <tr>
+          <th scope="row">{{ row.label }}</th>
+          <td><a href="{{ row.url }}">{{ row.text }}</a></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h2 class="section-label">Writing</h2>
+
+<div class="sheet-wrap" tabindex="0" role="region" aria-label="Posts">
+  <table class="sheet post-table">
+    <caption class="visually-hidden">Posts, newest first</caption>
+    <thead>
+      <tr>
+        <th scope="col">Date</th>
+        <th scope="col">Title</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for post in site.posts %}
+      <tr>
+        <td>{{ post.date | date: "%Y-%m-%d" }}</td>
+        <td><a href="{{ post.url }}">{{ post.title }}</a></td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
 </div>
