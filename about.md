@@ -11,6 +11,12 @@ title: About
     football!
   </p>
   <p>
+    These days most of my time goes into
+    <a href="/ninetynine.html">ninetynine.systems</a>, my software studio, and
+    <a href="https://gatekeeper.now">Gatekeeper</a> &mdash; a thing that holds
+    risky actions until someone approves them.
+  </p>
+  <p>
     Reach me at <a href="mailto:sazidozon@gmail.com">sazidozon@gmail.com</a>.
   </p>
 </div>
