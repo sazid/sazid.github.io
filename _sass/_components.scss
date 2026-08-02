@@ -134,6 +134,76 @@
   font-size: var(--size-small);
 }
 
+// ── Entry ───────────────────────────────────────────────────────────────────
+// For content that looks like a table row but is not tabular: a job, a project,
+// a degree. Uses a real heading and a real list so screen readers announce it
+// correctly, while matching the sheets visually.
+
+.entry {
+  padding: var(--space-5) 0;
+  border-top: var(--rule) solid var(--border);
+}
+
+.entry:first-of-type {
+  padding-top: var(--space-2);
+  border-top: 0;
+}
+
+.entry-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.7fr);
+  gap: var(--space-4);
+  align-items: baseline;
+}
+
+.entry-meta {
+  margin: 0;
+  color: var(--muted);
+  text-align: right;
+}
+
+.entry-period {
+  margin: var(--space-1) 0 var(--space-3);
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: var(--size-small);
+}
+
+.entry-list { margin: 0; }
+
+// ── Button ──────────────────────────────────────────────────────────────────
+
+.button {
+  display: inline-block;
+  padding: var(--space-2) var(--space-3);
+  border: var(--rule) solid var(--border-strong);
+  background: var(--bg);
+  color: var(--text);
+  font-size: var(--size-small);
+}
+
+.button:hover,
+.button:focus-visible {
+  background: var(--text);
+  color: var(--bg);
+  text-decoration: none;
+}
+
+// ── Inline meta list ────────────────────────────────────────────────────────
+// The location / website / profile line under a page title.
+
+.meta-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-4);
+  margin: 0 0 var(--space-4);
+  padding: 0;
+  list-style: none;
+  color: var(--muted);
+}
+
+.meta-list li + li { margin-top: 0; }
+
 // ── Responsive ──────────────────────────────────────────────────────────────
 // One breakpoint for the whole site.
 
@@ -144,4 +214,7 @@
   .sheet-grid { grid-template-columns: 1fr; }
   .sheet-grid .sheet-wrap { margin-bottom: var(--space-4); }
   .sheet--rows tbody th { width: auto; }
+
+  .entry-head { display: block; }
+  .entry-meta { margin-top: var(--space-1); text-align: left; }
 }
