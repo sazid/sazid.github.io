@@ -1,0 +1,112 @@
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('/assets/fonts/JetBrainsMono-Regular.woff2') format('woff2');
+  font-display: swap;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-size: var(--size-body);
+  line-height: var(--leading-body);
+  text-rendering: optimizeLegibility;
+  -webkit-text-size-adjust: 100%;
+}
+
+// Full page width. Tables use all of it.
+.shell {
+  width: 100%;
+  max-width: var(--shell);
+  margin: 0 auto;
+  padding: 0 var(--space-4);
+}
+
+// Comfortable reading width. Prose uses this, tables never do.
+.prose { max-width: var(--measure); }
+
+h1, h2, h3 {
+  line-height: var(--leading-heading);
+  font-weight: 700;
+}
+
+h1 { font-size: var(--size-h1); margin: var(--space-6) 0 var(--space-4); }
+h2 { font-size: var(--size-body); margin: var(--space-6) 0 var(--space-3); }
+h3 { font-size: var(--size-h3); margin: 0; }
+
+p { margin: 0 0 var(--space-4); }
+
+ul, ol { margin: 0 0 var(--space-4); padding-left: var(--space-5); }
+li + li { margin-top: var(--space-2); }
+
+a { color: var(--link); text-decoration: none; }
+a:hover, a:focus-visible { text-decoration: underline; }
+
+// Visible focus for keyboard users on every focusable element.
+// Nothing in this project may override this with `outline: none`.
+:focus-visible {
+  outline: 2px solid var(--text);
+  outline-offset: 2px;
+}
+
+code {
+  font-family: var(--font-mono);
+  font-size: 0.9375em;
+  background: var(--code-bg);
+  padding: 0 var(--space-1);
+}
+
+pre {
+  margin: 0 0 var(--space-4);
+  padding: var(--space-3);
+  overflow-x: auto;
+  border: var(--rule) solid var(--border);
+  background: var(--code-bg);
+  font-size: var(--size-small);
+  line-height: 1.45;
+}
+
+pre code { padding: 0; background: transparent; font-size: inherit; }
+
+img { max-width: 100%; height: auto; }
+
+hr {
+  border: 0;
+  border-top: var(--rule) solid var(--border);
+  margin: var(--space-6) 0;
+}
+
+// Present for screen readers, invisible on screen. Used for table captions
+// where an adjacent heading already names the table.
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.skip-link {
+  position: absolute;
+  left: var(--space-4);
+  top: -100px;
+  z-index: 10;
+  padding: var(--space-2) var(--space-3);
+  border: var(--rule) solid var(--border-strong);
+  background: var(--bg);
+  color: var(--text);
+}
+
+.skip-link:focus { top: var(--space-2); text-decoration: none; }
+
+// The skip link targets <main>, which needs tabindex="-1" to accept focus.
+// That would otherwise draw an outline on mouse click, which :focus-visible
+// already handles for keyboard users. This is the only permitted use of
+// `outline: none` in the project. Do not copy this pattern elsewhere.
+main:focus { outline: none; }

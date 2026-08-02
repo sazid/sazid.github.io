@@ -1,4 +1,9 @@
 url: "https://sazid.github.io"
+# Design specs and implementation plans are repository documentation, not site
+# pages. They also contain Liquid template snippets in code fences, which Jekyll
+# would otherwise try to execute.
+exclude:
+  - docs
 plugins:
   - jekyll-sitemap
   - jekyll-seo-tag

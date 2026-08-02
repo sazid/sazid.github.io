@@ -6,97 +6,105 @@ description: Public CV for Mohammed Sazid Al Rashid.
 
 {% assign resume = site.data.resume %}
 
-<article class="cv-page">
-  <header class="cv-header">
-    <p class="cv-label">CV / Resume</p>
-    <h1>{{ resume.name }}</h1>
-    <ul class="cv-meta">
-      <li>{{ resume.location }}</li>
-      <li><a href="{{ resume.website.url }}">{{ resume.website.label }}</a></li>
-      {% for profile in resume.profiles %}
-      <li><a href="{{ profile.url }}">{{ profile.label }}</a></li>
-      {% endfor %}
-    </ul>
-    <p class="cv-download"><a href="{{ resume.pdf }}">Download PDF</a></p>
-  </header>
+<article>
+  <h1>{{ resume.name }}</h1>
 
-  <section class="cv-section">
-    <h2>Professional Summary</h2>
+  <ul class="meta-list">
+    <li>{{ resume.location }}</li>
+    <li><a href="{{ resume.website.url }}">{{ resume.website.label }}</a></li>
+    {% for profile in resume.profiles %}
+    <li><a href="{{ profile.url }}">{{ profile.label }}</a></li>
+    {% endfor %}
+  </ul>
+
+  <p><a class="button" href="{{ resume.pdf }}">Download PDF</a></p>
+
+  <h2 class="section-label">Summary</h2>
+  <div class="prose">
     <p>{{ resume.summary }}</p>
-  </section>
+  </div>
 
-  <section class="cv-section">
-    <h2>Technical Proficiencies</h2>
-    <dl class="cv-skill-list">
-      {% for skill in resume.skills %}
-      <div>
-        <dt>{{ skill.label }}</dt>
-        <dd>{{ skill.details }}</dd>
-      </div>
-      {% endfor %}
-    </dl>
-  </section>
-
-  <section class="cv-section">
-    <h2>Experience</h2>
-    {% for job in resume.experience %}
-    <section class="cv-entry">
-      <div class="cv-entry-heading">
-        <h3>{{ job.role }}</h3>
-        <p>{{ job.company }} / {{ job.location }}</p>
-      </div>
-      <p class="cv-period">{{ job.period }}</p>
-      <ul>
-        {% for highlight in job.highlights %}
-        <li>{{ highlight }}</li>
+  <h2 class="section-label">Technical proficiencies</h2>
+  <div class="sheet-wrap" tabindex="0" role="region" aria-label="Technical proficiencies">
+    <table class="sheet sheet--rows">
+      <caption class="visually-hidden">Technical proficiencies by category</caption>
+      <tbody>
+        {% for skill in resume.skills %}
+        <tr>
+          <th scope="row">{{ skill.label }}</th>
+          <td>{{ skill.details }}</td>
+        </tr>
         {% endfor %}
-      </ul>
-    </section>
-    {% endfor %}
-  </section>
+      </tbody>
+    </table>
+  </div>
 
-  <section class="cv-section">
-    <h2>Projects</h2>
-    {% for project in resume.projects %}
-    <section class="cv-entry">
-      <div class="cv-entry-heading">
-        <h3>{{ project.name }}</h3>
-        <p>{{ project.stack }}</p>
-      </div>
-      <p class="cv-period"><a href="{{ project.link.url }}">{{ project.link.label }}</a></p>
-      <ul>
-        {% for highlight in project.highlights %}
-        <li>{{ highlight }}</li>
-        {% endfor %}
-      </ul>
-    </section>
-    {% endfor %}
-  </section>
-
-  <section class="cv-section">
-    <h2>Open Source Contributions</h2>
-    <ul class="cv-oss-list">
-      {% for item in resume.open_source %}
-      <li>{{ item.project }}: <a href="{{ item.url }}">{{ item.label }}</a></li>
+  <h2 class="section-label">Experience</h2>
+  {% for job in resume.experience %}
+  <section class="entry">
+    <div class="entry-head">
+      <h3>{{ job.role }}</h3>
+      <p class="entry-meta">{{ job.company }} / {{ job.location }}</p>
+    </div>
+    <p class="entry-period">{{ job.period }}</p>
+    <ul class="entry-list">
+      {% for highlight in job.highlights %}
+      <li>{{ highlight }}</li>
       {% endfor %}
     </ul>
   </section>
+  {% endfor %}
 
-  <section class="cv-section">
-    <h2>Education</h2>
-    {% for item in resume.education %}
-    <section class="cv-entry">
-      <div class="cv-entry-heading">
-        <h3>{{ item.institution }}</h3>
-        <p>{{ item.degree }}</p>
-      </div>
-      <p class="cv-period">{{ item.period }}</p>
-      <ul>
-        {% for highlight in item.highlights %}
-        <li>{{ highlight }}</li>
-        {% endfor %}
-      </ul>
-    </section>
-    {% endfor %}
+  <h2 class="section-label">Projects</h2>
+  {% for project in resume.projects %}
+  <section class="entry">
+    <div class="entry-head">
+      <h3>{{ project.name }}</h3>
+      <p class="entry-meta">{{ project.stack }}</p>
+    </div>
+    <p class="entry-period"><a href="{{ project.link.url }}">{{ project.link.label }}</a></p>
+    <ul class="entry-list">
+      {% for highlight in project.highlights %}
+      <li>{{ highlight }}</li>
+      {% endfor %}
+    </ul>
   </section>
+  {% endfor %}
+
+  <h2 class="section-label">Open source contributions</h2>
+  <div class="sheet-wrap" tabindex="0" role="region" aria-label="Open source contributions">
+    <table class="sheet">
+      <caption class="visually-hidden">Open source contributions</caption>
+      <thead>
+        <tr>
+          <th scope="col">Project</th>
+          <th scope="col">Contribution</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for item in resume.open_source %}
+        <tr>
+          <th scope="row">{{ item.project }}</th>
+          <td><a href="{{ item.url }}">{{ item.label }}</a></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+  <h2 class="section-label">Education</h2>
+  {% for item in resume.education %}
+  <section class="entry">
+    <div class="entry-head">
+      <h3>{{ item.institution }}</h3>
+      <p class="entry-meta">{{ item.degree }}</p>
+    </div>
+    <p class="entry-period">{{ item.period }}</p>
+    <ul class="entry-list">
+      {% for highlight in item.highlights %}
+      <li>{{ highlight }}</li>
+      {% endfor %}
+    </ul>
+  </section>
+  {% endfor %}
 </article>

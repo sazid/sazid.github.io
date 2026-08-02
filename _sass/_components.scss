@@ -1,0 +1,261 @@
+// ── Navigation bar ──────────────────────────────────────────────────────────
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  justify-content: space-between;
+  align-items: baseline;
+  padding: var(--space-3) 0;
+  border-bottom: 2px solid var(--border-strong);
+}
+
+.nav-label {
+  margin: 0;
+  font-weight: 700;
+}
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav-links li + li { margin-top: 0; }
+
+// Current page is bold and not a link. Never signalled by colour alone.
+.nav-current { font-weight: 700; }
+
+// ── Footer ──────────────────────────────────────────────────────────────────
+
+.footer {
+  margin-top: var(--space-6);
+  padding: var(--space-4) 0;
+  border-top: var(--rule) solid var(--border);
+  color: var(--muted);
+  font-size: var(--size-small);
+}
+
+.footer p { margin: 0; }
+
+// ── Section label ───────────────────────────────────────────────────────────
+// Body-sized bold text with a hairline rule under it. Deliberately not large
+// and not uppercase: capitals reduce word-shape cues and slow reading.
+
+.section-label {
+  padding-bottom: var(--space-2);
+  border-bottom: var(--rule) solid var(--border);
+}
+
+// ── Sheet ───────────────────────────────────────────────────────────────────
+// The bordered data table. Two variants:
+//   .sheet          column headers in <thead>, e.g. the post list
+//   .sheet--rows    first cell of each row is a <th scope="row">, for
+//                   name/value pairs like the identity and contact sheets
+
+// The wrapper is the scroll container. It carries tabindex="0" and
+// role="region" in the markup so that when a table is too wide to fit, a
+// keyboard user can focus it and scroll it with the arrow keys. Without that,
+// wide table content is unreachable without a mouse.
+.sheet-wrap {
+  overflow-x: auto;
+  margin: 0 0 var(--space-4);
+}
+
+.sheet {
+  width: 100%;
+  border-collapse: collapse;
+  border: var(--rule) solid var(--border-strong);
+}
+
+// A caption styled to look like the grey title bar at the top of the table.
+// Use this when the table has no visible heading of its own. When a
+// .section-label already names the table, use <caption class="visually-hidden">
+// instead so the name reaches screen readers without being shown twice.
+.sheet-title {
+  padding: var(--space-2) var(--space-3);
+  border: var(--rule) solid var(--border-strong);
+  border-bottom: 0;
+  background: var(--fill);
+  text-align: left;
+  font-weight: 700;
+}
+
+.sheet th,
+.sheet td {
+  padding: var(--space-2) var(--space-3);
+  border: var(--rule) solid var(--border);
+  text-align: left;
+  vertical-align: top;
+}
+
+.sheet thead th {
+  background: var(--fill);
+  font-weight: 700;
+}
+
+// Row headers are labels, not emphasis, so they are not bold.
+.sheet--rows tbody th {
+  width: 34%;
+  font-weight: 400;
+}
+
+.sheet ul { margin: 0; padding-left: var(--space-4); }
+.sheet li + li { margin-top: var(--space-1); }
+
+// Two sheets side by side on the homepage.
+.sheet-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.85fr);
+  gap: var(--space-4);
+  align-items: start;
+}
+
+.sheet-grid .sheet-wrap { margin-bottom: 0; }
+
+// ── Post list ───────────────────────────────────────────────────────────────
+
+.post-table td:first-child {
+  width: 9rem;
+  font-family: var(--font-mono);
+  font-size: var(--size-small);
+  white-space: nowrap;
+}
+
+// ── Post ────────────────────────────────────────────────────────────────────
+
+.post-meta {
+  margin: 0 0 var(--space-6);
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: var(--size-small);
+}
+
+// ── Entry ───────────────────────────────────────────────────────────────────
+// For content that looks like a table row but is not tabular: a job, a project,
+// a degree. Uses a real heading and a real list so screen readers announce it
+// correctly, while matching the sheets visually.
+
+.entry {
+  padding: var(--space-5) 0;
+  border-top: var(--rule) solid var(--border);
+}
+
+.entry:first-of-type {
+  padding-top: var(--space-2);
+  border-top: 0;
+}
+
+.entry-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.7fr);
+  gap: var(--space-4);
+  align-items: baseline;
+}
+
+.entry-meta {
+  margin: 0;
+  color: var(--muted);
+  text-align: right;
+}
+
+.entry-period {
+  margin: var(--space-1) 0 var(--space-3);
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: var(--size-small);
+}
+
+.entry-list { margin: 0; }
+
+// ── Button ──────────────────────────────────────────────────────────────────
+
+.button {
+  display: inline-block;
+  padding: var(--space-2) var(--space-3);
+  border: var(--rule) solid var(--border-strong);
+  background: var(--bg);
+  color: var(--text);
+  font-size: var(--size-small);
+}
+
+.button:hover,
+.button:focus-visible {
+  background: var(--text);
+  color: var(--bg);
+  text-decoration: none;
+}
+
+// ── Inline meta list ────────────────────────────────────────────────────────
+// The location / website / profile line under a page title.
+
+.meta-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-4);
+  margin: 0 0 var(--space-4);
+  padding: 0;
+  list-style: none;
+  color: var(--muted);
+}
+
+.meta-list li + li { margin-top: 0; }
+
+// ── Project showcase ────────────────────────────────────────────────────────
+
+.showcase {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--space-3);
+  margin-top: var(--space-3);
+}
+
+.showcase-item { min-width: 0; margin: 0; }
+
+// Every showcase image is hosted off-site and lazy-loaded. Without a reserved
+// box each one collapses to a hairline until it arrives, and the page jumps as
+// they load. aspect-ratio holds the space; object-fit keeps whatever shape the
+// image actually is, letterboxed against the fill.
+.showcase img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  max-height: 240px;
+  border: var(--rule) solid var(--border);
+  background: var(--fill);
+  object-fit: contain;
+}
+
+.showcase figcaption {
+  margin-top: var(--space-1);
+  color: var(--muted);
+  font-size: var(--size-small);
+}
+
+.showcase-output { grid-column: 1 / -1; }
+.showcase-output pre { margin: 0; }
+
+.link-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  margin-top: var(--space-3);
+}
+
+// ── Responsive ──────────────────────────────────────────────────────────────
+// One breakpoint for the whole site.
+
+@media (max-width: 700px) {
+  .nav { display: block; }
+  .nav-label { margin-bottom: var(--space-2); }
+
+  .sheet-grid { grid-template-columns: 1fr; }
+  .sheet-grid .sheet-wrap { margin-bottom: var(--space-4); }
+  .sheet--rows tbody th { width: auto; }
+
+  .entry-head { display: block; }
+  .entry-meta { margin-top: var(--space-1); text-align: left; }
+}
