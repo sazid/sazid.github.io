@@ -204,6 +204,47 @@
 
 .meta-list li + li { margin-top: 0; }
 
+// ── Project showcase ────────────────────────────────────────────────────────
+
+.showcase {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--space-3);
+  margin-top: var(--space-3);
+}
+
+.showcase-item { min-width: 0; margin: 0; }
+
+// Every showcase image is hosted off-site and lazy-loaded. Without a reserved
+// box each one collapses to a hairline until it arrives, and the page jumps as
+// they load. aspect-ratio holds the space; object-fit keeps whatever shape the
+// image actually is, letterboxed against the fill.
+.showcase img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  max-height: 240px;
+  border: var(--rule) solid var(--border);
+  background: var(--fill);
+  object-fit: contain;
+}
+
+.showcase figcaption {
+  margin-top: var(--space-1);
+  color: var(--muted);
+  font-size: var(--size-small);
+}
+
+.showcase-output { grid-column: 1 / -1; }
+.showcase-output pre { margin: 0; }
+
+.link-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  margin-top: var(--space-3);
+}
+
 // ── Responsive ──────────────────────────────────────────────────────────────
 // One breakpoint for the whole site.
 

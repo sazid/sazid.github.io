@@ -1,8 +1,7 @@
 ---
 summary:
-  eyebrow: Projects
-  title: Project Timeline
-  intro: A timeline of notable systems projects, developer tools, Android apps, university work, and experiments.
+  title: Projects
+  intro: Notable systems projects, developer tools, Android apps, university work, and experiments, newest first.
 projects:
 - name: BitCode
   period: 2026
