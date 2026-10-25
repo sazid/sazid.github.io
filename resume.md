@@ -92,6 +92,29 @@ description: Public CV for Mohammed Sazid Al Rashid.
     </table>
   </div>
 
+  <h2 class="section-label">Talks and events</h2>
+  <div class="sheet-wrap" tabindex="0" role="region" aria-label="Talks and events">
+    <table class="sheet">
+      <caption class="visually-hidden">Talks and events</caption>
+      <thead>
+        <tr>
+          <th scope="col">Role</th>
+          <th scope="col">Event</th>
+          <th scope="col">Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for item in resume.talks %}
+        <tr>
+          <th scope="row">{{ item.role }}</th>
+          <td>{{ item.event }}</td>
+          <td>{{ item.date }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
   <h2 class="section-label">Education</h2>
   {% for item in resume.education %}
   <section class="entry">

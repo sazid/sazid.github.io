@@ -112,6 +112,17 @@ open_source:
     label: "#2429 Update outdated docs"
     url: https://github.com/cerbos/cerbos/pull/2429
 
+talks:
+  - role: Co-speaker
+    event: "Webinar: AI Security: Prevention and Defense, also covering recent vulnerabilities"
+    date: Oct 2026
+  - role: Speaker
+    event: "Agentic QA Engineering in 2026, KIB, Farmgate, Dhaka"
+    date: "2026"
+  - role: Delegate for ZeuZ
+    event: GITEX Global, Dubai
+    date: Oct 2025
+
 education:
   - institution: American International University Bangladesh
     degree: BSc in Computer Science and Software Engineering
